@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/news/euro-indicators/release-calendar",
+  "requested_at": "2026-09-12T04:24:01.501949+00:00",
+  "retrieved_at": "2026-09-12T04:24:03.319949+00:00",
+  "status": 200,
+  "content_type": "text/html;charset=UTF-8",
+  "sha256": "51a56a30941c9d9e4deb9b67a699ea8d9d18ee74feb933c86a8ba4952063b0ca",
+  "bytes": 201396,
+  "response_date": "Sat, 12 Sep 2026 04:24:02 GMT"
+}

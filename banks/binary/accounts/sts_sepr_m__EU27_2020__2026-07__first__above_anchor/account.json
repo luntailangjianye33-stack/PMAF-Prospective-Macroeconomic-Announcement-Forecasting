@@ -1,0 +1,80 @@
+{
+  "account_version": "1.0",
+  "anchor": {
+    "period": "2026-06",
+    "status_flag": "",
+    "value": -0.2
+  },
+  "calendar_package_id": "22494256",
+  "dataset": "sts_sepr_m",
+  "eligibility_status": "PASS",
+  "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+  "forecast": {
+    "p_yes": null,
+    "score": null,
+    "submitted_at": null
+  },
+  "geography_label": "European Union - 27 countries (from 2020)",
+  "global_rules": "../../global/global_rules.md",
+  "indicator_label_ja": "サービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）",
+  "input_provenance": {
+    "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+    "dataset_updated": "2026-09-08T11:00:00+0200",
+    "history_file": "management/raw/history_sts_sepr_m_v2.json",
+    "history_sha256": "159121b3c9feaf13c8bfe9504007aef6cc53dbe7975b6a2d97ea48844d7b79fa",
+    "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=H-N_X_K&s_adj=SCA&unit=PCH_PRE",
+    "retrieved_at": "2026-09-12T04:23:14.882431+00:00"
+  },
+  "local_rules": "local_rules.md",
+  "materials": [
+    "question.md",
+    "account.json",
+    "data/history.csv",
+    "materials.md"
+  ],
+  "publisher": "Eurostat",
+  "question_en": "For European Union - 27 countries (from 2020), will the first published 2026-07 value of Services production, for the exact series key specified here, be strictly greater than the frozen 2026-06 value of -0.2 percent? Submit P(YES) in [0,1].",
+  "question_id": "sts_sepr_m__EU27_2020__2026-07__first__above_anchor",
+  "question_ja": "EU27か国全体について、2026-07を対象とするサービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）の初回公表値は、保存済みの2026-06の値（-0.2 %）を厳密に上回るか。YESの確率を0以上1以下で提出せよ。",
+  "reference_month": "2026-07",
+  "release_target_id": "sts_sepr_m__EU27_2020__2026-07__first",
+  "resolution": {
+    "equal_means": "NO",
+    "future_document_url": null,
+    "observed_value": null,
+    "outcome": null,
+    "reference_month": "2026-07",
+    "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+    "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+    "source_title": "Services production",
+    "status": "NOT_YET_RELEASED",
+    "threshold": -0.2,
+    "value_operator": ">",
+    "vintage": "first official publication of target numeric value"
+  },
+  "series_cluster_id": "sts_sepr_m__EU27_2020",
+  "series_key": {
+    "freq": "M",
+    "geo": "EU27_2020",
+    "indic_bt": "PRD",
+    "nace_r2": "H-N_X_K",
+    "s_adj": "SCA",
+    "unit": "PCH_PRE"
+  },
+  "time": {
+    "presentation_utc": "2026-09-23T09:00:00+00:00",
+    "raw_calendar_allDay": true,
+    "raw_calendar_start": "2026-10-07T11:00Z",
+    "resolution_deadline_utc": "2026-10-08T09:00:00+00:00",
+    "schedule_status": "POLICY_DERIVED_TENTATIVE",
+    "scheduled_release_local": "2026-10-07T11:00:00+02:00",
+    "scheduled_release_utc": "2026-10-07T09:00:00+00:00",
+    "submission_deadline_utc": "2026-09-23T11:00:00+00:00",
+    "time_evidence": [
+      "management/raw/protocol_access.html",
+      "management/raw/calendar_ui.html"
+    ],
+    "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+  },
+  "unit_description": "percent change on previous month"
+}

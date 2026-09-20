@@ -1,0 +1,44 @@
+{
+  "une_rt_m": {
+    "freq": "M",
+    "s_adj": "SA",
+    "age": "TOTAL",
+    "sex": "T",
+    "unit": "PC_ACT"
+  },
+  "sts_inpr_m": {
+    "freq": "M",
+    "indic_bt": "PRD",
+    "nace_r2": "B-D",
+    "s_adj": "SCA",
+    "unit": "PCH_PRE"
+  },
+  "sts_inppd_m": {
+    "freq": "M",
+    "indic_bt": "PRC_PRR_DOM",
+    "nace_r2": "B-D",
+    "s_adj": "NSA",
+    "unit": "PCH_PRE"
+  },
+  "sts_trtu_m": {
+    "freq": "M",
+    "indic_bt": "VOL_SLS",
+    "nace_r2": "G47",
+    "s_adj": "SCA",
+    "unit": "PCH_PRE"
+  },
+  "sts_sepr_m": {
+    "freq": "M",
+    "indic_bt": "PRD",
+    "nace_r2": "H-N_STS",
+    "s_adj": "SCA",
+    "unit": "PCH_PRE"
+  },
+  "sts_copr_m": {
+    "freq": "M",
+    "indic_bt": "PRD",
+    "nace_r2": "F",
+    "s_adj": "SCA",
+    "unit": "PCH_PRE"
+  }
+}

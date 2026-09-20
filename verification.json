@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "binary_generated_files_identical": 207,
+  "point_generated_files_identical": 211,
+  "network": false,
+  "comparison": "every build-produced file against packaged counterpart; post-build validation/seal supplements verified by manifests"
+}

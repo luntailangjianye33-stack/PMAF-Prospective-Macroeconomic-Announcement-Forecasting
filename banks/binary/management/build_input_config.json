@@ -1,0 +1,209 @@
+{
+  "identity": {
+    "bank_id": "PMAF_EU_Q4_2026_BINARY_30_v0.1",
+    "config_version": "1.0",
+    "configured_at_utc": "2026-09-12T04:25:25.337070+00:00",
+    "prepared_by": "Codex, under researcher request",
+    "phase": "construction demonstration; no forecast execution"
+  },
+  "objective": {
+    "ability": "Reasoning about future releases of monthly EU/euro-area aggregate macroeconomic statistics relative to a fixed historical anchor",
+    "subjects": "unspecified; future human or AI participants",
+    "rationale": "Six monthly headline indicators cover labour, output, prices and retail; illustrative restricted frame, not all European statistics."
+  },
+  "time_design": {
+    "experiment_start_utc": "2026-09-15T00:00:00+00:00",
+    "experiment_end_utc": "2027-01-02T23:59:59+00:00",
+    "release_date_start": "2026-10-01",
+    "release_date_end": "2026-12-31",
+    "timezone": "Europe/Luxembourg",
+    "release_local_time_assumption": "11:00:00",
+    "release_time_basis": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution.",
+    "H_hours": 336,
+    "D_hours": 2,
+    "resolution_buffer_hours": 24,
+    "tolerance_seconds": 0,
+    "planned_schedule_admissible": true
+  },
+  "collection_request": {
+    "publisher": "Eurostat",
+    "calendar_author": "estat",
+    "geographies": [
+      "EU27_2020",
+      "EA21"
+    ],
+    "release_kind": "First Eurostat euro-indicator publication of the specified monthly aggregate/reference period",
+    "raw_calendar": "calendar_q4.json",
+    "scope_logic": "calendar author AND exact title AND dataset membership; expand each matching package into two aggregate geographical targets; monthly component only",
+    "reference_period_limit": "none beyond explicit monthly period in package",
+    "completeness_claim": "bounded source snapshot and declared six-series frame only"
+  },
+  "series": {
+    "une_rt_m": {
+      "filters": {
+        "freq": "M",
+        "s_adj": "SA",
+        "age": "TOTAL",
+        "sex": "T",
+        "unit": "PC_ACT"
+      },
+      "calendar_title": "Unemployment",
+      "label_ja": "失業率（季節調整済み、男女計・全年齢）",
+      "unit_description": "percent of labour force",
+      "raw_history": "history_une_rt_m.json"
+    },
+    "sts_inpr_m": {
+      "filters": {
+        "freq": "M",
+        "indic_bt": "PRD",
+        "nace_r2": "B-D",
+        "s_adj": "SCA",
+        "unit": "PCH_PRE"
+      },
+      "calendar_title": "Industrial production",
+      "label_ja": "鉱工業生産の前月比（B–D、季節・暦調整済み）",
+      "unit_description": "percent change on previous month",
+      "raw_history": "history_sts_inpr_m.json"
+    },
+    "sts_inppd_m": {
+      "filters": {
+        "freq": "M",
+        "indic_bt": "PRC_PRR_DOM",
+        "nace_r2": "B-D",
+        "s_adj": "NSA",
+        "unit": "PCH_PRE"
+      },
+      "calendar_title": "Industrial producer prices, domestic market",
+      "label_ja": "国内向け鉱工業生産者物価の前月比（B–D、未調整）",
+      "unit_description": "percent change on previous month",
+      "raw_history": "history_sts_inppd_m.json"
+    },
+    "sts_trtu_m": {
+      "filters": {
+        "freq": "M",
+        "indic_bt": "VOL_SLS",
+        "nace_r2": "G47",
+        "s_adj": "SCA",
+        "unit": "PCH_PRE"
+      },
+      "calendar_title": "Retail trade",
+      "label_ja": "小売販売数量の前月比（G47、季節・暦調整済み）",
+      "unit_description": "percent change on previous month",
+      "raw_history": "history_sts_trtu_m.json"
+    },
+    "sts_sepr_m": {
+      "filters": {
+        "freq": "M",
+        "indic_bt": "PRD",
+        "nace_r2": "H-N_X_K",
+        "s_adj": "SCA",
+        "unit": "PCH_PRE"
+      },
+      "calendar_title": "Services production",
+      "label_ja": "サービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）",
+      "unit_description": "percent change on previous month",
+      "raw_history": "history_sts_sepr_m_v2.json"
+    },
+    "sts_copr_m": {
+      "filters": {
+        "freq": "M",
+        "indic_bt": "PRD",
+        "nace_r2": "F",
+        "s_adj": "SCA",
+        "unit": "PCH_PRE"
+      },
+      "calendar_title": "Production in construction",
+      "label_ja": "建設生産の前月比（F、季節・暦調整済み）",
+      "unit_description": "percent change on previous month",
+      "raw_history": "history_sts_copr_m.json"
+    }
+  },
+  "question_generation": {
+    "templates_per_target": 1,
+    "format": "binary_probability",
+    "event": "target first-release published numeric value > frozen anchor",
+    "anchor": "latest nonmissing observation of identical series/geography in the archived construction snapshot; must precede target reference month",
+    "ties": "NO",
+    "comparison": "decimal values as published; no inferred unrounded value",
+    "anchor_revision": "never update within this bank version"
+  },
+  "quality_and_eligibility": {
+    "version": "1.0",
+    "required": [
+      "source_scope",
+      "series_identity",
+      "planned_time_feasible",
+      "future_target_plan",
+      "anchor_and_history",
+      "resolution_defined",
+      "unique_id"
+    ],
+    "statuses": [
+      "PASS",
+      "FAIL",
+      "UNVERIFIED"
+    ],
+    "acceptance": "all mandatory criteria PASS",
+    "missing_evidence": "UNVERIFIED, excluded from sampling",
+    "history_months": 24,
+    "reference_period_parser": "English month plus year; Sept maps to September; quarterly suffix ignored only for monthly dataset"
+  },
+  "selection": {
+    "target_n": 30,
+    "unit": "question account",
+    "method": "simple random sampling without replacement",
+    "frame_order": "question_id ascending Unicode code point",
+    "implementation": "Python random.Random(seed).sample(sorted_ids, k)",
+    "python_version": "3.13.9",
+    "seed": 20260912,
+    "stratification": null,
+    "shortfall": "select all eligible and report achieved count; no synthetic padding",
+    "post_selection_material_failure": "stop construction; preserve failure; no silent replacement",
+    "dependence": "record calendar package, release target and series cluster IDs; no independence assumption"
+  },
+  "materials_and_access": {
+    "profile": "provided_materials_only",
+    "history_months": 24,
+    "provided": "question.md, account.json, data/history.csv, materials.md, local_rules.md, shared global_rules.md; no whole-bank browsing",
+    "network": "disabled during the response session",
+    "prediction_markets": "prohibited, including republished probabilities, quotations, search summaries and market-derived datasets",
+    "tools": "local arithmetic/statistics/code permitted; tool versions and use must be recorded",
+    "scope_of_control": "session access only; prior human knowledge or pretrained model knowledge cannot be removed",
+    "input_snapshot": "construction snapshots retained unchanged; no rolling refresh"
+  },
+  "resolution_and_scoring": {
+    "source": "official Eurostat euro-indicator release page/table for exact indicator, geography and reference month; archive first publication content",
+    "entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+    "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+    "vintage": "first publication of target value; later corrections recorded separately",
+    "fallback": "none: latest API value cannot substitute for missing first-publication evidence",
+    "deadline": "scheduled release plus 24 elapsed hours",
+    "loss": "(p_yes - outcome)^2",
+    "aggregation": "equal-weight mean over valid resolved forecast records, separately per subject/condition; report planned, submitted, excluded and resolved counts",
+    "unresolved": "null outcome and null score, never zero",
+    "rounding": "compare Decimal(str(published_value)) to Decimal(str(anchor))"
+  },
+  "exceptions_and_records": {
+    "schedule_change": "retain frozen original; defer affected question to a separately versioned bank before presentation, or exclude from this run; never move times silently",
+    "early_release": "if published before submission, mark contaminated and exclude",
+    "late_submission": "invalid; preserve timestamp and record",
+    "missing_result": "UNRESOLVED at resolution deadline; no invented outcome",
+    "rule_violation": "invalid with evidence; excluded count reported",
+    "external_timestamp": "not obtained",
+    "freeze": "local SHA-256 manifest and local UTC timestamp only"
+  },
+  "configuration_history": [
+    {
+      "phase": "exploratory source discovery before this configuration",
+      "decision": "Official Q4 calendar and API dimensions inspected; six domains and two aggregates chosen before eligibility and random sampling. User fixed binary probability, market ban and approximately 30 randomly sampled accounts."
+    },
+    {
+      "phase": "exploration correction",
+      "decision": "Initial services query H-N_STS returned no numeric observations. Official code label H-N_X_K and populated observations matched intended coverage; adopted H-N_X_K. Both responses retained. Unemployment age TOTAL is actual monthly-table code, rather than absent Y15-74 code."
+    },
+    {
+      "phase": "default choices by assistant",
+      "decision": "H=14 days, D=2 hours, b=24 hours, 24-month history, fixed latest-snapshot anchor, closed-book supplied materials, EU27_2020 plus EA21. These are this demonstration settings, not universal PMAF requirements."
+    }
+  ]
+}

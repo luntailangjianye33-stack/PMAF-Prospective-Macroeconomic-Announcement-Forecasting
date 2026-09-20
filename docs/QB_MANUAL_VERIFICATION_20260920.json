@@ -1,0 +1,54 @@
+{
+  "observed_on": "2026-09-20",
+  "scope": "Read-only checks of the archived Eurostat banks, plus offline rebuild in temporary directories. No new acquisition, forecasts, outcome collection or scoring.",
+  "environment": {
+    "python": "3.13.9",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "dependencies": {
+      "jsonschema": "4.25.0",
+      "tzdata": "2025.2",
+      "requests": "2.32.5"
+    }
+  },
+  "observations": [
+    {
+      "command": "python -B scripts/verify_artifact.py .",
+      "status": "PASS",
+      "files_before_manual_addition": 450
+    },
+    {
+      "command": "python -B scripts/reproduce.py .",
+      "status": "PASS",
+      "binary_generated_files_identical": 207,
+      "point_generated_files_identical": 211,
+      "network": false
+    },
+    {
+      "command": "python -B banks/binary/scripts/validate.py banks/binary",
+      "status": "PASS",
+      "passed_checks": 540,
+      "errors": []
+    },
+    {
+      "command": "python -B banks/point/scripts/validate_point.py --binary banks/binary --point banks/point",
+      "status": "PASS",
+      "passed_checks": 574,
+      "errors": []
+    },
+    {
+      "command": "python -B scripts/verify_freeze.py banks/binary",
+      "status": "PASS",
+      "files": 221
+    },
+    {
+      "command": "python -B scripts/verify_freeze.py banks/point",
+      "status": "PASS",
+      "files": 216
+    }
+  ],
+  "bank_manifest_sha256": {
+    "binary": "f710e30c61fc9d327baa5bcc1b64822dda1daf1160885cec473da11237bd4e97",
+    "point": "af580d8e699943a88e5145a10adc9721a5c75f106d30740e4fe2cb8a283e59f3"
+  },
+  "publication": "Planned in the same repository as both Eurostat QBs; not uploaded."
+}

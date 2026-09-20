@@ -1,0 +1,80 @@
+{
+  "account_version": "1.0",
+  "anchor": {
+    "period": "2026-07",
+    "status_flag": "i",
+    "value": 1.8
+  },
+  "calendar_package_id": "22494450",
+  "dataset": "sts_inppd_m",
+  "eligibility_status": "PASS",
+  "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+  "forecast": {
+    "p_yes": null,
+    "score": null,
+    "submitted_at": null
+  },
+  "geography_label": "Euro area – 21 countries (from 2026)",
+  "global_rules": "../../global/global_rules.md",
+  "indicator_label_ja": "国内向け鉱工業生産者物価の前月比（B–D、未調整）",
+  "input_provenance": {
+    "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+    "dataset_updated": "2026-09-11T11:00:00+0200",
+    "history_file": "management/raw/history_sts_inppd_m.json",
+    "history_sha256": "5b6426ebc2665a542b4ec1445893bcbdb2e04247aa64f3dc224ab478bb4a16d3",
+    "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inppd_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRC_PRR_DOM&nace_r2=B-D&s_adj=NSA&unit=PCH_PRE",
+    "retrieved_at": "2026-09-12T04:21:49.479951+00:00"
+  },
+  "local_rules": "local_rules.md",
+  "materials": [
+    "question.md",
+    "account.json",
+    "data/history.csv",
+    "materials.md"
+  ],
+  "publisher": "Eurostat",
+  "question_en": "For Euro area – 21 countries (from 2026), will the first published 2026-09 value of Industrial producer prices, domestic market, for the exact series key specified here, be strictly greater than the frozen 2026-07 value of 1.8 percent? Submit P(YES) in [0,1].",
+  "question_id": "sts_inppd_m__EA21__2026-09__first__above_anchor",
+  "question_ja": "ユーロ圏21か国について、2026-09を対象とする国内向け鉱工業生産者物価の前月比（B–D、未調整）の初回公表値は、保存済みの2026-07の値（1.8 %）を厳密に上回るか。YESの確率を0以上1以下で提出せよ。",
+  "reference_month": "2026-09",
+  "release_target_id": "sts_inppd_m__EA21__2026-09__first",
+  "resolution": {
+    "equal_means": "NO",
+    "future_document_url": null,
+    "observed_value": null,
+    "outcome": null,
+    "reference_month": "2026-09",
+    "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+    "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+    "source_title": "Industrial producer prices, domestic market",
+    "status": "NOT_YET_RELEASED",
+    "threshold": 1.8,
+    "value_operator": ">",
+    "vintage": "first official publication of target numeric value"
+  },
+  "series_cluster_id": "sts_inppd_m__EA21",
+  "series_key": {
+    "freq": "M",
+    "geo": "EA21",
+    "indic_bt": "PRC_PRR_DOM",
+    "nace_r2": "B-D",
+    "s_adj": "NSA",
+    "unit": "PCH_PRE"
+  },
+  "time": {
+    "presentation_utc": "2026-10-22T10:00:00+00:00",
+    "raw_calendar_allDay": true,
+    "raw_calendar_start": "2026-11-05T11:00Z",
+    "resolution_deadline_utc": "2026-11-06T10:00:00+00:00",
+    "schedule_status": "POLICY_DERIVED_TENTATIVE",
+    "scheduled_release_local": "2026-11-05T11:00:00+01:00",
+    "scheduled_release_utc": "2026-11-05T10:00:00+00:00",
+    "submission_deadline_utc": "2026-10-22T12:00:00+00:00",
+    "time_evidence": [
+      "management/raw/protocol_access.html",
+      "management/raw/calendar_ui.html"
+    ],
+    "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+  },
+  "unit_description": "percent change on previous month"
+}

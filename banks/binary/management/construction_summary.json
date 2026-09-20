@@ -1,0 +1,29 @@
+{
+  "candidate_questions": 36,
+  "configuration_phase": "after documented exploratory source discovery; before screening and sampling",
+  "eligible_questions": 36,
+  "failed_questions": 0,
+  "forecast_runs": 0,
+  "history_rows": 720,
+  "in_scope_packages": 18,
+  "out_of_scope_packages": 37,
+  "per_geo": {
+    "EA21": 17,
+    "EU27_2020": 13
+  },
+  "per_indicator": {
+    "sts_copr_m": 4,
+    "sts_inppd_m": 5,
+    "sts_inpr_m": 5,
+    "sts_sepr_m": 4,
+    "sts_trtu_m": 6,
+    "une_rt_m": 6
+  },
+  "raw_calendar_packages": 55,
+  "release_targets": 36,
+  "resolved_outcomes": 0,
+  "schedule_status": "tentative policy-derived; actual execution verification pending",
+  "scores": 0,
+  "selected_accounts": 30,
+  "selected_release_packages": 17
+}

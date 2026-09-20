@@ -1,0 +1,20 @@
+{
+  "original_archive_manifest_sha256": "adbbc94e43869c42d7f22f661ceaf87c7c4139a2225af8e275c4be2f843bf7b6",
+  "original_freeze_record": {
+    "status": "SEALED_LOCAL",
+    "recorded_at_utc": "2026-09-12T04:33:14.041205+00:00",
+    "manifest_sha256": "adbbc94e43869c42d7f22f661ceaf87c7c4139a2225af8e275c4be2f843bf7b6",
+    "external_timestamp": null,
+    "external_preregistration": null,
+    "meaning": "Local content correspondence; no independent proof of prior existence.",
+    "validation_status": "PASS",
+    "replay_status": "PASS"
+  },
+  "omitted_from_public_distribution": [
+    "private manuscript reference copies",
+    "local absolute path protocol index"
+  ],
+  "all_accounts_materials_rules_source_responses_and_build_outputs_preserved": true,
+  "replay_input": "management/build_input_config.json preserves the original JSON key order used in human-readable strings; semantically identical to global/config.json",
+  "relation": "public distribution copy; original archive unchanged; distribution has its own manifest"
+}

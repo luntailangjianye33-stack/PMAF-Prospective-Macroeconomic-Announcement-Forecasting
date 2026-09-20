@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&time=2026-06&s_adj=SA&age=Y15-74&sex=T&unit=PC_ACT",
+  "requested_at": "2026-09-12T04:16:53.895414+00:00",
+  "retrieved_at": "2026-09-12T04:16:55.927048+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "3d0ade360b314daed6706c9d64ad79c178cd580f5d4749b056660e6c2afbf1da",
+  "bytes": 3684,
+  "response_date": "Sat, 12 Sep 2026 04:16:54 GMT"
+}

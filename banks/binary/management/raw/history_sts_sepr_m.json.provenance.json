@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=H-N_STS&s_adj=SCA&unit=PCH_PRE",
+  "requested_at": "2026-09-12T04:21:49.512810+00:00",
+  "retrieved_at": "2026-09-12T04:21:54.060232+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "7eb068e2570133643aadde8c1ce9c325e0ada423d1e716647d45ada179f3bff4",
+  "bytes": 4767,
+  "response_date": "Sat, 12 Sep 2026 04:21:52 GMT"
+}

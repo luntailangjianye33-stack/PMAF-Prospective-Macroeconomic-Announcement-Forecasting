@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_copr_m?lang=en&geo=EU27_2020&geo=EA21&time=2026-06",
+  "requested_at": "2026-09-12T04:17:32.403548+00:00",
+  "retrieved_at": "2026-09-12T04:17:34.494110+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "781c536f990de3617be4da41875928254aac914a1b7f9d4dfc9435549c32877d",
+  "bytes": 5117,
+  "response_date": "Sat, 12 Sep 2026 04:17:33 GMT"
+}

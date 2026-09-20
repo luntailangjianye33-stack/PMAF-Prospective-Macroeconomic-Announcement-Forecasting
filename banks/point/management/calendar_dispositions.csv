@@ -1,0 +1,56 @@
+package_id,title,raw_start,raw_period,scope_status,reason
+22494146,Unemployment,2026-10-01T11:00Z,August 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494157,House price index,2026-10-01T11:00Z,Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494168,Flash estimate inflation euro area,2026-10-02T11:00Z,September 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494179,First release sector accounts (households and businesses),2026-10-02T11:00Z,Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494190,Balance of payments,2026-10-02T11:00Z,Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494201,Building permits,2026-10-02T11:00Z,June 2026 - Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494212,"Industrial producer prices, domestic market",2026-10-05T11:00Z,August 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494223,Industrial import prices,2026-10-06T11:00Z,August 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494234,Retail trade,2026-10-06T11:00Z,August 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494245,Services producer prices,2026-10-06T11:00Z,Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494256,Services production,2026-10-07T11:00Z,July 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494267,Interest rates (3 months),2026-10-13T11:00Z,September 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494277,Long term gvt bond yield,2026-10-13T11:00Z,September 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494287,Industrial production,2026-10-15T11:00Z,August 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494298,Inflation (HICP),2026-10-16T11:00Z,September 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494309,International trade in goods,2026-10-16T11:00Z,August 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494319,GDP main aggregates and employment - update,2026-10-20T11:00Z,Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494330,Production in construction,2026-10-20T11:00Z,August 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494341,General government deficit and debt,2026-10-21T11:00Z,2025 - 2nd notification,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494352,Quarterly government debt,2026-10-21T11:00Z,Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494363,Quarterly government deficit,2026-10-21T11:00Z,Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494374,Second release sector accounts (households),2026-10-28T11:00Z,Q2/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494385,Economic Sentiment Indicator & Business and Consumer Survey results,2026-10-29T11:00Z,October 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494395,Preliminary flash estimate GDP - EU and euro area,2026-10-30T11:00Z,Q3/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494406,Unemployment,2026-10-30T11:00Z,September 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494428,Flash estimate inflation euro area,2026-11-04T11:00Z,October 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494439,Building permits,2026-11-04T11:00Z,July 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494450,"Industrial producer prices, domestic market",2026-11-05T11:00Z,September 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494461,Industrial import prices,2026-11-06T11:00Z,September 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494472,Retail trade,2026-11-06T11:00Z,September 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494483,Services production,2026-11-09T11:00Z,August 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494494,Flash estimate GDP and employment - EU and euro area,2026-11-13T11:00Z,Q3/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494505,International trade in goods,2026-11-13T11:00Z,September 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494515,Interest rates (3 months),2026-11-12T11:00Z,October 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494525,Long term gvt bond yield,2026-11-12T11:00Z,October 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494535,Industrial production,2026-11-16T11:00Z,September 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494546,Inflation (HICP),2026-11-18T11:00Z,October 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494557,Production in construction,2026-11-19T11:00Z,Sept 2026 - Q3/2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494568,Economic Sentiment Indicator & Business and Consumer Survey results,2026-11-27T11:00Z,November 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494578,Building permits,2026-12-02T11:00Z,August 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494589,Flash estimate inflation euro area,2026-12-01T11:00Z,November 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22494600,Unemployment,2026-12-02T11:00Z,October 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22494611,"Industrial producer prices, domestic market",2026-12-03T11:00Z,October 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22519852,Industrial import prices,2026-12-04T11:00Z,October 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22519863,Retail trade,2026-12-04T11:00Z,October 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22519874,GDP main aggregates and employment,2026-12-07T11:00Z,Q3/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22519885,Services production,2026-12-07T11:00Z,September 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22519896,Interest rates (3 months),2026-12-11T11:00Z,November 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22519906,Long term gvt bond yield,2026-12-11T11:00Z,November 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22519916,Industrial production,2026-12-15T11:00Z,October 2026,IN_SCOPE,"declared exact title, publisher and dataset"
+22519927,International trade in goods,2026-12-16T11:00Z,October 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22519938,Job vacancy,2026-12-16T11:00Z,Q3/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22519949,Inflation (HICP),2026-12-17T11:00Z,November 2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22519960,Labour cost index,2026-12-17T11:00Z,Q3/2026,OUT_OF_SCOPE,outside declared six monthly indicator domains
+22519971,Production in construction,2026-12-18T11:00Z,October 2026,IN_SCOPE,"declared exact title, publisher and dataset"

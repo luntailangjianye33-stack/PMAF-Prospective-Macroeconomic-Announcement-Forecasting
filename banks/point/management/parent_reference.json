@@ -1,0 +1,7 @@
+{
+  "binary_bank_id": "PMAF_EU_Q4_2026_BINARY_30_v0.1",
+  "binary_config_sha256": "afff1d93bcdd5418a8c4e356d0ff47f774bbf7070ed0ada10dd38a22c823a77d",
+  "binary_manifest_sha256": "f710e30c61fc9d327baa5bcc1b64822dda1daf1160885cec473da11237bd4e97",
+  "binary_selection_sha256": "96d79a72bb072282a6e7da7c0ba66c1f2c2d90c6087cfb459137282e23c9a010",
+  "relationship": "paired format variants of the same 30 release targets, not two independent samples"
+}

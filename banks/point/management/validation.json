@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "passed_checks": 574,
+  "errors": [],
+  "paired_accounts": 30,
+  "eligible_candidates": 36,
+  "scope": "paired construction, archived data, numeric target definition and fixed normalization; no prospective execution or score results",
+  "checked_at_utc": "2026-09-12T04:54:21.068984+00:00"
+}

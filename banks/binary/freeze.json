@@ -1,0 +1,11 @@
+{
+  "status": "SEALED_LOCAL",
+  "recorded_at_utc": "2026-09-12T04:54:17.834441+00:00",
+  "manifest_sha256": "f710e30c61fc9d327baa5bcc1b64822dda1daf1160885cec473da11237bd4e97",
+  "external_timestamp": null,
+  "external_preregistration": null,
+  "meaning": "Local content correspondence only; no independent prior-existence proof.",
+  "validation_status": "PASS",
+  "replay_status": "PASS",
+  "distribution_copy": true
+}

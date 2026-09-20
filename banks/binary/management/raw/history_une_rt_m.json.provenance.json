@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT",
+  "requested_at": "2026-09-12T04:21:46.927390+00:00",
+  "retrieved_at": "2026-09-12T04:21:49.522288+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "f7aadb39e4b9116a292faba3d10a3b1150a038f1c14ec36404e7b01d65d81c08",
+  "bytes": 5264,
+  "response_date": "Sat, 12 Sep 2026 04:21:48 GMT"
+}

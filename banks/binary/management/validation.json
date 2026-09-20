@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "passed_checks": 540,
+  "errors": [],
+  "raw_retrieval_status_counts": {
+    "200": 22,
+    "404": 1
+  },
+  "account_count": 30,
+  "scope": "construction and archived data integrity; does not validate actual future release times, execution controls or forecasting performance",
+  "checked_at_utc": "2026-09-12T04:33:13.146437+00:00"
+}

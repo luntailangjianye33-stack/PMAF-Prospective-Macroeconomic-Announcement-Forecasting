@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&time=2026-06",
+  "requested_at": "2026-09-12T04:17:28.854228+00:00",
+  "retrieved_at": "2026-09-12T04:17:31.328582+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "f456e1001a66e0de1c72dbbebfab36f8ce6f275fa9dc45dee664d5db10fad7d6",
+  "bytes": 14015,
+  "response_date": "Sat, 12 Sep 2026 04:17:30 GMT"
+}

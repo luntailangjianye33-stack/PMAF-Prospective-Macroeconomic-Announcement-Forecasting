@@ -1,0 +1,11 @@
+{
+  "configured_at_utc": "2026-09-12T04:49:33.768027+00:00",
+  "normalization": {
+    "aggregation": "equal weight per valid resolved account",
+    "ddof": 1,
+    "input": "same archived same-series/geography historical values as binary account",
+    "method": "sample standard deviation",
+    "n": 24,
+    "nonpositive_or_missing": "fail construction, retain sample mapping, no silent replacement"
+  }
+}

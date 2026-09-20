@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "matched_files": 207,
+  "scope": "every file produced by build.py before validation/freeze supplements",
+  "method": "offline rebuild into separate temporary directory; compare relative file sets and SHA-256 byte hashes",
+  "network_during_replay": false
+}

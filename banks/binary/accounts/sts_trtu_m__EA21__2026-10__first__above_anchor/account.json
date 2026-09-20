@@ -1,0 +1,80 @@
+{
+  "account_version": "1.0",
+  "anchor": {
+    "period": "2026-07",
+    "status_flag": "",
+    "value": -0.6
+  },
+  "calendar_package_id": "22519863",
+  "dataset": "sts_trtu_m",
+  "eligibility_status": "PASS",
+  "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+  "forecast": {
+    "p_yes": null,
+    "score": null,
+    "submitted_at": null
+  },
+  "geography_label": "Euro area – 21 countries (from 2026)",
+  "global_rules": "../../global/global_rules.md",
+  "indicator_label_ja": "小売販売数量の前月比（G47、季節・暦調整済み）",
+  "input_provenance": {
+    "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+    "dataset_updated": "2026-09-11T11:00:00+0200",
+    "history_file": "management/raw/history_sts_trtu_m.json",
+    "history_sha256": "2498b2dfcc2f2afe5bb2881ad1bacfd3da74518f5c4ee5b159db765d781f0b8e",
+    "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=VOL_SLS&nace_r2=G47&s_adj=SCA&unit=PCH_PRE",
+    "retrieved_at": "2026-09-12T04:21:54.010339+00:00"
+  },
+  "local_rules": "local_rules.md",
+  "materials": [
+    "question.md",
+    "account.json",
+    "data/history.csv",
+    "materials.md"
+  ],
+  "publisher": "Eurostat",
+  "question_en": "For Euro area – 21 countries (from 2026), will the first published 2026-10 value of Retail trade, for the exact series key specified here, be strictly greater than the frozen 2026-07 value of -0.6 percent? Submit P(YES) in [0,1].",
+  "question_id": "sts_trtu_m__EA21__2026-10__first__above_anchor",
+  "question_ja": "ユーロ圏21か国について、2026-10を対象とする小売販売数量の前月比（G47、季節・暦調整済み）の初回公表値は、保存済みの2026-07の値（-0.6 %）を厳密に上回るか。YESの確率を0以上1以下で提出せよ。",
+  "reference_month": "2026-10",
+  "release_target_id": "sts_trtu_m__EA21__2026-10__first",
+  "resolution": {
+    "equal_means": "NO",
+    "future_document_url": null,
+    "observed_value": null,
+    "outcome": null,
+    "reference_month": "2026-10",
+    "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+    "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+    "source_title": "Retail trade",
+    "status": "NOT_YET_RELEASED",
+    "threshold": -0.6,
+    "value_operator": ">",
+    "vintage": "first official publication of target numeric value"
+  },
+  "series_cluster_id": "sts_trtu_m__EA21",
+  "series_key": {
+    "freq": "M",
+    "geo": "EA21",
+    "indic_bt": "VOL_SLS",
+    "nace_r2": "G47",
+    "s_adj": "SCA",
+    "unit": "PCH_PRE"
+  },
+  "time": {
+    "presentation_utc": "2026-11-20T10:00:00+00:00",
+    "raw_calendar_allDay": true,
+    "raw_calendar_start": "2026-12-04T11:00Z",
+    "resolution_deadline_utc": "2026-12-05T10:00:00+00:00",
+    "schedule_status": "POLICY_DERIVED_TENTATIVE",
+    "scheduled_release_local": "2026-12-04T11:00:00+01:00",
+    "scheduled_release_utc": "2026-12-04T10:00:00+00:00",
+    "submission_deadline_utc": "2026-11-20T12:00:00+00:00",
+    "time_evidence": [
+      "management/raw/protocol_access.html",
+      "management/raw/calendar_ui.html"
+    ],
+    "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+  },
+  "unit_description": "percent change on previous month"
+}

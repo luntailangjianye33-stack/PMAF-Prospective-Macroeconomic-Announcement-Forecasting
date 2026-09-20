@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&time=2026-06",
+  "requested_at": "2026-09-12T04:17:32.672658+00:00",
+  "retrieved_at": "2026-09-12T04:17:34.752321+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "c618a2bf4763f415cf9febb0e6b3b64513474ae3849e967157728db791d3f142",
+  "bytes": 5037,
+  "response_date": "Sat, 12 Sep 2026 04:17:33 GMT"
+}

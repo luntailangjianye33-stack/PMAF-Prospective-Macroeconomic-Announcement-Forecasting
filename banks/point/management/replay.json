@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "matched_files": 211,
+  "scope": "all deterministic build_point.py outputs, before verification/seal supplements",
+  "network": false
+}

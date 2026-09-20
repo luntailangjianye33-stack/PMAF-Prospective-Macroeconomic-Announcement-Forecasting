@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/cache/metadata/en/sts_esms.htm",
+  "requested_at": "2026-09-12T04:22:47.280323+00:00",
+  "retrieved_at": "2026-09-12T04:22:50.103652+00:00",
+  "status": 200,
+  "content_type": "text/html",
+  "sha256": "4e5e98b39c04799fb18cc4c7474fa627fe06a859931006ac8538b98255097b48",
+  "bytes": 267524,
+  "response_date": "Sat, 12 Sep 2026 04:22:48 GMT"
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&time=2026-06",
+  "requested_at": "2026-09-12T04:17:31.354061+00:00",
+  "retrieved_at": "2026-09-12T04:17:33.769756+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "926b12815a3fb68c9733f1d7a38d659754959f61a15b5bd9c46b9a00ec1bdd83",
+  "bytes": 9561,
+  "response_date": "Sat, 12 Sep 2026 04:17:32 GMT"
+}

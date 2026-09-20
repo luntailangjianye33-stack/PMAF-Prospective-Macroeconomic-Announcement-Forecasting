@@ -1,0 +1,3926 @@
+[
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494330",
+    "dataset": "sts_copr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": -1.3
+    },
+    "indicator_label_ja": "建設生産の前月比（F、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_copr_m.json",
+      "history_sha256": "18ab5e10126a634d01d5b40ae36167b4a38a7861cd4881c8324a0581aa282121",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_copr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=F&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.011988+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.2120694364765492,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_copr_m__EA21__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_copr_m__EA21__2026-08__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-08を対象とする建設生産の前月比（F、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_copr_m__EA21__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Production in construction",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.2120694364765492,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_copr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "F",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-06T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-20T11:00Z",
+      "resolution_deadline_utc": "2026-10-21T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-20T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-20T09:00:00+00:00",
+      "submission_deadline_utc": "2026-10-06T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494557",
+    "dataset": "sts_copr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": -1.3
+    },
+    "indicator_label_ja": "建設生産の前月比（F、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_copr_m.json",
+      "history_sha256": "18ab5e10126a634d01d5b40ae36167b4a38a7861cd4881c8324a0581aa282121",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_copr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=F&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.011988+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.2120694364765492,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_copr_m__EA21__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_copr_m__EA21__2026-09__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-09を対象とする建設生産の前月比（F、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_copr_m__EA21__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Production in construction",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.2120694364765492,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_copr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "F",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-05T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-19T11:00Z",
+      "resolution_deadline_utc": "2026-11-20T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-19T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-19T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-05T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22519971",
+    "dataset": "sts_copr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": -1.3
+    },
+    "indicator_label_ja": "建設生産の前月比（F、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_copr_m.json",
+      "history_sha256": "18ab5e10126a634d01d5b40ae36167b4a38a7861cd4881c8324a0581aa282121",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_copr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=F&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.011988+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.2120694364765492,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_copr_m__EA21__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_copr_m__EA21__2026-10__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-10を対象とする建設生産の前月比（F、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "sts_copr_m__EA21__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Production in construction",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.2120694364765492,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_copr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "F",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-12-04T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-18T11:00Z",
+      "resolution_deadline_utc": "2026-12-19T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-18T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-18T10:00:00+00:00",
+      "submission_deadline_utc": "2026-12-04T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494330",
+    "dataset": "sts_copr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": -1.0
+    },
+    "indicator_label_ja": "建設生産の前月比（F、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_copr_m.json",
+      "history_sha256": "18ab5e10126a634d01d5b40ae36167b4a38a7861cd4881c8324a0581aa282121",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_copr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=F&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.011988+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.2362871014054337,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_copr_m__EU27_2020__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_copr_m__EU27_2020__2026-08__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-08を対象とする建設生産の前月比（F、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_copr_m__EU27_2020__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Production in construction",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.2362871014054337,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_copr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "F",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-06T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-20T11:00Z",
+      "resolution_deadline_utc": "2026-10-21T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-20T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-20T09:00:00+00:00",
+      "submission_deadline_utc": "2026-10-06T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494557",
+    "dataset": "sts_copr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": -1.0
+    },
+    "indicator_label_ja": "建設生産の前月比（F、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_copr_m.json",
+      "history_sha256": "18ab5e10126a634d01d5b40ae36167b4a38a7861cd4881c8324a0581aa282121",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_copr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=F&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.011988+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.2362871014054337,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_copr_m__EU27_2020__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_copr_m__EU27_2020__2026-09__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-09を対象とする建設生産の前月比（F、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_copr_m__EU27_2020__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Production in construction",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.2362871014054337,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_copr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "F",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-05T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-19T11:00Z",
+      "resolution_deadline_utc": "2026-11-20T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-19T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-19T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-05T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22519971",
+    "dataset": "sts_copr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": -1.0
+    },
+    "indicator_label_ja": "建設生産の前月比（F、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_copr_m.json",
+      "history_sha256": "18ab5e10126a634d01d5b40ae36167b4a38a7861cd4881c8324a0581aa282121",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_copr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=F&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.011988+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.2362871014054337,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_copr_m__EU27_2020__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_copr_m__EU27_2020__2026-10__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-10を対象とする建設生産の前月比（F、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "sts_copr_m__EU27_2020__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Production in construction",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.2362871014054337,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_copr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "F",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-12-04T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-18T11:00Z",
+      "resolution_deadline_utc": "2026-12-19T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-18T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-18T10:00:00+00:00",
+      "submission_deadline_utc": "2026-12-04T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494212",
+    "dataset": "sts_inppd_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "i",
+      "value": 1.8
+    },
+    "indicator_label_ja": "国内向け鉱工業生産者物価の前月比（B–D、未調整）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inppd_m.json",
+      "history_sha256": "5b6426ebc2665a542b4ec1445893bcbdb2e04247aa64f3dc224ab478bb4a16d3",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inppd_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRC_PRR_DOM&nace_r2=B-D&s_adj=NSA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.479951+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.1264604047538738,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inppd_m__EA21__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inppd_m__EA21__2026-08__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-08を対象とする国内向け鉱工業生産者物価の前月比（B–D、未調整）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_inppd_m__EA21__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial producer prices, domestic market",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.1264604047538738,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inppd_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRC_PRR_DOM",
+      "nace_r2": "B-D",
+      "s_adj": "NSA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-09-21T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-05T11:00Z",
+      "resolution_deadline_utc": "2026-10-06T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-05T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-05T09:00:00+00:00",
+      "submission_deadline_utc": "2026-09-21T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494450",
+    "dataset": "sts_inppd_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "i",
+      "value": 1.8
+    },
+    "indicator_label_ja": "国内向け鉱工業生産者物価の前月比（B–D、未調整）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inppd_m.json",
+      "history_sha256": "5b6426ebc2665a542b4ec1445893bcbdb2e04247aa64f3dc224ab478bb4a16d3",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inppd_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRC_PRR_DOM&nace_r2=B-D&s_adj=NSA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.479951+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.1264604047538738,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inppd_m__EA21__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inppd_m__EA21__2026-09__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-09を対象とする国内向け鉱工業生産者物価の前月比（B–D、未調整）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_inppd_m__EA21__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial producer prices, domestic market",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.1264604047538738,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inppd_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRC_PRR_DOM",
+      "nace_r2": "B-D",
+      "s_adj": "NSA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-22T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-05T11:00Z",
+      "resolution_deadline_utc": "2026-11-06T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-05T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-05T10:00:00+00:00",
+      "submission_deadline_utc": "2026-10-22T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494611",
+    "dataset": "sts_inppd_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "i",
+      "value": 1.8
+    },
+    "indicator_label_ja": "国内向け鉱工業生産者物価の前月比（B–D、未調整）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inppd_m.json",
+      "history_sha256": "5b6426ebc2665a542b4ec1445893bcbdb2e04247aa64f3dc224ab478bb4a16d3",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inppd_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRC_PRR_DOM&nace_r2=B-D&s_adj=NSA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.479951+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.1264604047538738,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inppd_m__EA21__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inppd_m__EA21__2026-10__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-10を対象とする国内向け鉱工業生産者物価の前月比（B–D、未調整）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "sts_inppd_m__EA21__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial producer prices, domestic market",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.1264604047538738,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inppd_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRC_PRR_DOM",
+      "nace_r2": "B-D",
+      "s_adj": "NSA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-19T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-03T11:00Z",
+      "resolution_deadline_utc": "2026-12-04T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-03T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-03T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-19T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494212",
+    "dataset": "sts_inppd_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "i",
+      "value": 1.6
+    },
+    "indicator_label_ja": "国内向け鉱工業生産者物価の前月比（B–D、未調整）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inppd_m.json",
+      "history_sha256": "5b6426ebc2665a542b4ec1445893bcbdb2e04247aa64f3dc224ab478bb4a16d3",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inppd_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRC_PRR_DOM&nace_r2=B-D&s_adj=NSA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.479951+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.084943062688251,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inppd_m__EU27_2020__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inppd_m__EU27_2020__2026-08__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-08を対象とする国内向け鉱工業生産者物価の前月比（B–D、未調整）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_inppd_m__EU27_2020__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial producer prices, domestic market",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.084943062688251,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inppd_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRC_PRR_DOM",
+      "nace_r2": "B-D",
+      "s_adj": "NSA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-09-21T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-05T11:00Z",
+      "resolution_deadline_utc": "2026-10-06T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-05T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-05T09:00:00+00:00",
+      "submission_deadline_utc": "2026-09-21T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494450",
+    "dataset": "sts_inppd_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "i",
+      "value": 1.6
+    },
+    "indicator_label_ja": "国内向け鉱工業生産者物価の前月比（B–D、未調整）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inppd_m.json",
+      "history_sha256": "5b6426ebc2665a542b4ec1445893bcbdb2e04247aa64f3dc224ab478bb4a16d3",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inppd_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRC_PRR_DOM&nace_r2=B-D&s_adj=NSA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.479951+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.084943062688251,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inppd_m__EU27_2020__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inppd_m__EU27_2020__2026-09__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-09を対象とする国内向け鉱工業生産者物価の前月比（B–D、未調整）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_inppd_m__EU27_2020__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial producer prices, domestic market",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.084943062688251,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inppd_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRC_PRR_DOM",
+      "nace_r2": "B-D",
+      "s_adj": "NSA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-22T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-05T11:00Z",
+      "resolution_deadline_utc": "2026-11-06T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-05T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-05T10:00:00+00:00",
+      "submission_deadline_utc": "2026-10-22T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494611",
+    "dataset": "sts_inppd_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "i",
+      "value": 1.6
+    },
+    "indicator_label_ja": "国内向け鉱工業生産者物価の前月比（B–D、未調整）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inppd_m.json",
+      "history_sha256": "5b6426ebc2665a542b4ec1445893bcbdb2e04247aa64f3dc224ab478bb4a16d3",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inppd_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRC_PRR_DOM&nace_r2=B-D&s_adj=NSA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.479951+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.084943062688251,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inppd_m__EU27_2020__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inppd_m__EU27_2020__2026-10__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-10を対象とする国内向け鉱工業生産者物価の前月比（B–D、未調整）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "sts_inppd_m__EU27_2020__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial producer prices, domestic market",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.084943062688251,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inppd_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRC_PRR_DOM",
+      "nace_r2": "B-D",
+      "s_adj": "NSA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-19T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-03T11:00Z",
+      "resolution_deadline_utc": "2026-12-04T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-03T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-03T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-19T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494287",
+    "dataset": "sts_inpr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": 0.0
+    },
+    "indicator_label_ja": "鉱工業生産の前月比（B–D、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inpr_m.json",
+      "history_sha256": "3ddf6167cc4fe07d4848abd69c7188c35c24123f37fafaa6b13f6e76f8db87d8",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=B-D&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.480270+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.0822597802210234,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inpr_m__EA21__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inpr_m__EA21__2026-08__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-08を対象とする鉱工業生産の前月比（B–D、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_inpr_m__EA21__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.0822597802210234,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inpr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "B-D",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-01T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-15T11:00Z",
+      "resolution_deadline_utc": "2026-10-16T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-15T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-15T09:00:00+00:00",
+      "submission_deadline_utc": "2026-10-01T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494535",
+    "dataset": "sts_inpr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": 0.0
+    },
+    "indicator_label_ja": "鉱工業生産の前月比（B–D、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inpr_m.json",
+      "history_sha256": "3ddf6167cc4fe07d4848abd69c7188c35c24123f37fafaa6b13f6e76f8db87d8",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=B-D&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.480270+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.0822597802210234,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inpr_m__EA21__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inpr_m__EA21__2026-09__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-09を対象とする鉱工業生産の前月比（B–D、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_inpr_m__EA21__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.0822597802210234,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inpr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "B-D",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-02T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-16T11:00Z",
+      "resolution_deadline_utc": "2026-11-17T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-16T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-16T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-02T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22519916",
+    "dataset": "sts_inpr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": 0.0
+    },
+    "indicator_label_ja": "鉱工業生産の前月比（B–D、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inpr_m.json",
+      "history_sha256": "3ddf6167cc4fe07d4848abd69c7188c35c24123f37fafaa6b13f6e76f8db87d8",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=B-D&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.480270+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 1.0822597802210234,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inpr_m__EA21__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inpr_m__EA21__2026-10__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-10を対象とする鉱工業生産の前月比（B–D、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "sts_inpr_m__EA21__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 1.0822597802210234,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inpr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "B-D",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-12-01T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-15T11:00Z",
+      "resolution_deadline_utc": "2026-12-16T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-15T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-15T10:00:00+00:00",
+      "submission_deadline_utc": "2026-12-01T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494287",
+    "dataset": "sts_inpr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": 0.2
+    },
+    "indicator_label_ja": "鉱工業生産の前月比（B–D、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inpr_m.json",
+      "history_sha256": "3ddf6167cc4fe07d4848abd69c7188c35c24123f37fafaa6b13f6e76f8db87d8",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=B-D&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.480270+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.9095208963347491,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inpr_m__EU27_2020__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inpr_m__EU27_2020__2026-08__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-08を対象とする鉱工業生産の前月比（B–D、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_inpr_m__EU27_2020__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.9095208963347491,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inpr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "B-D",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-01T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-15T11:00Z",
+      "resolution_deadline_utc": "2026-10-16T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-15T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-15T09:00:00+00:00",
+      "submission_deadline_utc": "2026-10-01T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494535",
+    "dataset": "sts_inpr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": 0.2
+    },
+    "indicator_label_ja": "鉱工業生産の前月比（B–D、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inpr_m.json",
+      "history_sha256": "3ddf6167cc4fe07d4848abd69c7188c35c24123f37fafaa6b13f6e76f8db87d8",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=B-D&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.480270+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.9095208963347491,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inpr_m__EU27_2020__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inpr_m__EU27_2020__2026-09__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-09を対象とする鉱工業生産の前月比（B–D、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_inpr_m__EU27_2020__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.9095208963347491,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inpr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "B-D",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-02T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-16T11:00Z",
+      "resolution_deadline_utc": "2026-11-17T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-16T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-16T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-02T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22519916",
+    "dataset": "sts_inpr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "i",
+      "value": 0.2
+    },
+    "indicator_label_ja": "鉱工業生産の前月比（B–D、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_inpr_m.json",
+      "history_sha256": "3ddf6167cc4fe07d4848abd69c7188c35c24123f37fafaa6b13f6e76f8db87d8",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=B-D&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:49.480270+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.9095208963347491,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_inpr_m__EU27_2020__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_inpr_m__EU27_2020__2026-10__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-10を対象とする鉱工業生産の前月比（B–D、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "sts_inpr_m__EU27_2020__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Industrial production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.9095208963347491,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_inpr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "B-D",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-12-01T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-15T11:00Z",
+      "resolution_deadline_utc": "2026-12-16T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-15T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-15T10:00:00+00:00",
+      "submission_deadline_utc": "2026-12-01T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494256",
+    "dataset": "sts_sepr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "",
+      "value": -0.3
+    },
+    "indicator_label_ja": "サービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-08T11:00:00+0200",
+      "history_file": "management/raw/history_sts_sepr_m_v2.json",
+      "history_sha256": "159121b3c9feaf13c8bfe9504007aef6cc53dbe7975b6a2d97ea48844d7b79fa",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=H-N_X_K&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:23:14.882431+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4457325837673123,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_sepr_m__EA21__2026-07__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-07 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_sepr_m__EA21__2026-07__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-07を対象とするサービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-07",
+    "release_target_id": "sts_sepr_m__EA21__2026-07__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-07",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Services production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4457325837673123,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_sepr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "H-N_X_K",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-09-23T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-07T11:00Z",
+      "resolution_deadline_utc": "2026-10-08T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-07T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-07T09:00:00+00:00",
+      "submission_deadline_utc": "2026-09-23T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494483",
+    "dataset": "sts_sepr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "",
+      "value": -0.3
+    },
+    "indicator_label_ja": "サービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-08T11:00:00+0200",
+      "history_file": "management/raw/history_sts_sepr_m_v2.json",
+      "history_sha256": "159121b3c9feaf13c8bfe9504007aef6cc53dbe7975b6a2d97ea48844d7b79fa",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=H-N_X_K&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:23:14.882431+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4457325837673123,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_sepr_m__EA21__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_sepr_m__EA21__2026-08__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-08を対象とするサービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_sepr_m__EA21__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Services production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4457325837673123,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_sepr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "H-N_X_K",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-26T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-09T11:00Z",
+      "resolution_deadline_utc": "2026-11-10T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-09T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-09T10:00:00+00:00",
+      "submission_deadline_utc": "2026-10-26T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22519885",
+    "dataset": "sts_sepr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "",
+      "value": -0.3
+    },
+    "indicator_label_ja": "サービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-08T11:00:00+0200",
+      "history_file": "management/raw/history_sts_sepr_m_v2.json",
+      "history_sha256": "159121b3c9feaf13c8bfe9504007aef6cc53dbe7975b6a2d97ea48844d7b79fa",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=H-N_X_K&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:23:14.882431+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4457325837673123,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_sepr_m__EA21__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_sepr_m__EA21__2026-09__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-09を対象とするサービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_sepr_m__EA21__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Services production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4457325837673123,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_sepr_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "PRD",
+      "nace_r2": "H-N_X_K",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-23T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-07T11:00Z",
+      "resolution_deadline_utc": "2026-12-08T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-07T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-07T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-23T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494256",
+    "dataset": "sts_sepr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "",
+      "value": -0.2
+    },
+    "indicator_label_ja": "サービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-08T11:00:00+0200",
+      "history_file": "management/raw/history_sts_sepr_m_v2.json",
+      "history_sha256": "159121b3c9feaf13c8bfe9504007aef6cc53dbe7975b6a2d97ea48844d7b79fa",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=H-N_X_K&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:23:14.882431+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4016045715427776,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_sepr_m__EU27_2020__2026-07__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-07 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_sepr_m__EU27_2020__2026-07__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-07を対象とするサービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-07",
+    "release_target_id": "sts_sepr_m__EU27_2020__2026-07__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-07",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Services production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4016045715427776,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_sepr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "H-N_X_K",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-09-23T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-07T11:00Z",
+      "resolution_deadline_utc": "2026-10-08T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-07T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-07T09:00:00+00:00",
+      "submission_deadline_utc": "2026-09-23T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494483",
+    "dataset": "sts_sepr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "",
+      "value": -0.2
+    },
+    "indicator_label_ja": "サービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-08T11:00:00+0200",
+      "history_file": "management/raw/history_sts_sepr_m_v2.json",
+      "history_sha256": "159121b3c9feaf13c8bfe9504007aef6cc53dbe7975b6a2d97ea48844d7b79fa",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=H-N_X_K&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:23:14.882431+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4016045715427776,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_sepr_m__EU27_2020__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_sepr_m__EU27_2020__2026-08__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-08を対象とするサービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_sepr_m__EU27_2020__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Services production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4016045715427776,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_sepr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "H-N_X_K",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-26T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-09T11:00Z",
+      "resolution_deadline_utc": "2026-11-10T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-09T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-09T10:00:00+00:00",
+      "submission_deadline_utc": "2026-10-26T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22519885",
+    "dataset": "sts_sepr_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-06",
+      "status_flag": "",
+      "value": -0.2
+    },
+    "indicator_label_ja": "サービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-08T11:00:00+0200",
+      "history_file": "management/raw/history_sts_sepr_m_v2.json",
+      "history_sha256": "159121b3c9feaf13c8bfe9504007aef6cc53dbe7975b6a2d97ea48844d7b79fa",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_sepr_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRD&nace_r2=H-N_X_K&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:23:14.882431+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-06",
+      "period_start": "2024-07",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4016045715427776,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_sepr_m__EU27_2020__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_sepr_m__EU27_2020__2026-09__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-09を対象とするサービス生産の前月比（H–N、金融・保険を除く、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_sepr_m__EU27_2020__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Services production",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4016045715427776,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_sepr_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "PRD",
+      "nace_r2": "H-N_X_K",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-23T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-07T11:00Z",
+      "resolution_deadline_utc": "2026-12-08T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-07T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-07T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-23T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494234",
+    "dataset": "sts_trtu_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": -0.6
+    },
+    "indicator_label_ja": "小売販売数量の前月比（G47、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_trtu_m.json",
+      "history_sha256": "2498b2dfcc2f2afe5bb2881ad1bacfd3da74518f5c4ee5b159db765d781f0b8e",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=VOL_SLS&nace_r2=G47&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.010339+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4781455724000768,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_trtu_m__EA21__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_trtu_m__EA21__2026-08__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-08を対象とする小売販売数量の前月比（G47、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_trtu_m__EA21__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Retail trade",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4781455724000768,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_trtu_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "VOL_SLS",
+      "nace_r2": "G47",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-09-22T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-06T11:00Z",
+      "resolution_deadline_utc": "2026-10-07T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-06T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-06T09:00:00+00:00",
+      "submission_deadline_utc": "2026-09-22T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494472",
+    "dataset": "sts_trtu_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": -0.6
+    },
+    "indicator_label_ja": "小売販売数量の前月比（G47、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_trtu_m.json",
+      "history_sha256": "2498b2dfcc2f2afe5bb2881ad1bacfd3da74518f5c4ee5b159db765d781f0b8e",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=VOL_SLS&nace_r2=G47&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.010339+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4781455724000768,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_trtu_m__EA21__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_trtu_m__EA21__2026-09__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-09を対象とする小売販売数量の前月比（G47、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_trtu_m__EA21__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Retail trade",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4781455724000768,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_trtu_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "VOL_SLS",
+      "nace_r2": "G47",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-23T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-06T11:00Z",
+      "resolution_deadline_utc": "2026-11-07T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-06T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-06T10:00:00+00:00",
+      "submission_deadline_utc": "2026-10-23T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22519863",
+    "dataset": "sts_trtu_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": -0.6
+    },
+    "indicator_label_ja": "小売販売数量の前月比（G47、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_trtu_m.json",
+      "history_sha256": "2498b2dfcc2f2afe5bb2881ad1bacfd3da74518f5c4ee5b159db765d781f0b8e",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=VOL_SLS&nace_r2=G47&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.010339+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.4781455724000768,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_trtu_m__EA21__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_trtu_m__EA21__2026-10__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-10を対象とする小売販売数量の前月比（G47、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "sts_trtu_m__EA21__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Retail trade",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.4781455724000768,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_trtu_m__EA21",
+    "series_key": {
+      "freq": "M",
+      "geo": "EA21",
+      "indic_bt": "VOL_SLS",
+      "nace_r2": "G47",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-20T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-04T11:00Z",
+      "resolution_deadline_utc": "2026-12-05T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-04T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-04T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-20T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494234",
+    "dataset": "sts_trtu_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": -0.4
+    },
+    "indicator_label_ja": "小売販売数量の前月比（G47、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_trtu_m.json",
+      "history_sha256": "2498b2dfcc2f2afe5bb2881ad1bacfd3da74518f5c4ee5b159db765d781f0b8e",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=VOL_SLS&nace_r2=G47&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.010339+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.5086035157486468,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_trtu_m__EU27_2020__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_trtu_m__EU27_2020__2026-08__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-08を対象とする小売販売数量の前月比（G47、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "sts_trtu_m__EU27_2020__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Retail trade",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.5086035157486468,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_trtu_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "VOL_SLS",
+      "nace_r2": "G47",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-09-22T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-06T11:00Z",
+      "resolution_deadline_utc": "2026-10-07T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-06T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-06T09:00:00+00:00",
+      "submission_deadline_utc": "2026-09-22T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494472",
+    "dataset": "sts_trtu_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": -0.4
+    },
+    "indicator_label_ja": "小売販売数量の前月比（G47、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_trtu_m.json",
+      "history_sha256": "2498b2dfcc2f2afe5bb2881ad1bacfd3da74518f5c4ee5b159db765d781f0b8e",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=VOL_SLS&nace_r2=G47&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.010339+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.5086035157486468,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_trtu_m__EU27_2020__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_trtu_m__EU27_2020__2026-09__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-09を対象とする小売販売数量の前月比（G47、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "sts_trtu_m__EU27_2020__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Retail trade",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.5086035157486468,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_trtu_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "VOL_SLS",
+      "nace_r2": "G47",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-10-23T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-11-06T11:00Z",
+      "resolution_deadline_utc": "2026-11-07T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-11-06T11:00:00+01:00",
+      "scheduled_release_utc": "2026-11-06T10:00:00+00:00",
+      "submission_deadline_utc": "2026-10-23T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22519863",
+    "dataset": "sts_trtu_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": -0.4
+    },
+    "indicator_label_ja": "小売販売数量の前月比（G47、季節・暦調整済み）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-11T11:00:00+0200",
+      "history_file": "management/raw/history_sts_trtu_m.json",
+      "history_sha256": "2498b2dfcc2f2afe5bb2881ad1bacfd3da74518f5c4ee5b159db765d781f0b8e",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=VOL_SLS&nace_r2=G47&s_adj=SCA&unit=PCH_PRE",
+      "retrieved_at": "2026-09-12T04:21:54.010339+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.5086035157486468,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "sts_trtu_m__EU27_2020__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "sts_trtu_m__EU27_2020__2026-10__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-10を対象とする小売販売数量の前月比（G47、季節・暦調整済み）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "sts_trtu_m__EU27_2020__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Retail trade",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": null,
+      "minimum": -100,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.5086035157486468,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "sts_trtu_m__EU27_2020",
+    "series_key": {
+      "freq": "M",
+      "geo": "EU27_2020",
+      "indic_bt": "VOL_SLS",
+      "nace_r2": "G47",
+      "s_adj": "SCA",
+      "unit": "PCH_PRE"
+    },
+    "time": {
+      "presentation_utc": "2026-11-20T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-04T11:00Z",
+      "resolution_deadline_utc": "2026-12-05T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-04T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-04T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-20T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent change on previous month"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494146",
+    "dataset": "une_rt_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": 6.4
+    },
+    "indicator_label_ja": "失業率（季節調整済み、男女計・全年齢）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-04T23:00:00+0200",
+      "history_file": "management/raw/history_une_rt_m.json",
+      "history_sha256": "f7aadb39e4b9116a292faba3d10a3b1150a038f1c14ec36404e7b01d65d81c08",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT",
+      "retrieved_at": "2026-09-12T04:21:49.522288+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.058359207512176575,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "une_rt_m__EA21__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "une_rt_m__EA21__2026-08__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-08を対象とする失業率（季節調整済み、男女計・全年齢）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "une_rt_m__EA21__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Unemployment",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": 100,
+      "minimum": 0,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.058359207512176575,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "une_rt_m__EA21",
+    "series_key": {
+      "age": "TOTAL",
+      "freq": "M",
+      "geo": "EA21",
+      "s_adj": "SA",
+      "sex": "T",
+      "unit": "PC_ACT"
+    },
+    "time": {
+      "presentation_utc": "2026-09-17T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-01T11:00Z",
+      "resolution_deadline_utc": "2026-10-02T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-01T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-01T09:00:00+00:00",
+      "submission_deadline_utc": "2026-09-17T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent of labour force"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494406",
+    "dataset": "une_rt_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": 6.4
+    },
+    "indicator_label_ja": "失業率（季節調整済み、男女計・全年齢）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-04T23:00:00+0200",
+      "history_file": "management/raw/history_une_rt_m.json",
+      "history_sha256": "f7aadb39e4b9116a292faba3d10a3b1150a038f1c14ec36404e7b01d65d81c08",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT",
+      "retrieved_at": "2026-09-12T04:21:49.522288+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.058359207512176575,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "une_rt_m__EA21__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "une_rt_m__EA21__2026-09__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-09を対象とする失業率（季節調整済み、男女計・全年齢）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "une_rt_m__EA21__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Unemployment",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": 100,
+      "minimum": 0,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.058359207512176575,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "une_rt_m__EA21",
+    "series_key": {
+      "age": "TOTAL",
+      "freq": "M",
+      "geo": "EA21",
+      "s_adj": "SA",
+      "sex": "T",
+      "unit": "PC_ACT"
+    },
+    "time": {
+      "presentation_utc": "2026-10-16T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-30T11:00Z",
+      "resolution_deadline_utc": "2026-10-31T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-30T11:00:00+01:00",
+      "scheduled_release_utc": "2026-10-30T10:00:00+00:00",
+      "submission_deadline_utc": "2026-10-16T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent of labour force"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494600",
+    "dataset": "une_rt_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "Euro area – 21 countries (from 2026)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": 6.4
+    },
+    "indicator_label_ja": "失業率（季節調整済み、男女計・全年齢）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-04T23:00:00+0200",
+      "history_file": "management/raw/history_une_rt_m.json",
+      "history_sha256": "f7aadb39e4b9116a292faba3d10a3b1150a038f1c14ec36404e7b01d65d81c08",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT",
+      "retrieved_at": "2026-09-12T04:21:49.522288+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.058359207512176575,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "une_rt_m__EA21__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For Euro area – 21 countries (from 2026), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "une_rt_m__EA21__2026-10__first__conditional_mean",
+    "question_ja": "ユーロ圏21か国について、2026-10を対象とする失業率（季節調整済み、男女計・全年齢）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "une_rt_m__EA21__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Unemployment",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": 100,
+      "minimum": 0,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.058359207512176575,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "une_rt_m__EA21",
+    "series_key": {
+      "age": "TOTAL",
+      "freq": "M",
+      "geo": "EA21",
+      "s_adj": "SA",
+      "sex": "T",
+      "unit": "PC_ACT"
+    },
+    "time": {
+      "presentation_utc": "2026-11-18T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-02T11:00Z",
+      "resolution_deadline_utc": "2026-12-03T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-02T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-02T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-18T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent of labour force"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494146",
+    "dataset": "une_rt_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": 6.1
+    },
+    "indicator_label_ja": "失業率（季節調整済み、男女計・全年齢）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-04T23:00:00+0200",
+      "history_file": "management/raw/history_une_rt_m.json",
+      "history_sha256": "f7aadb39e4b9116a292faba3d10a3b1150a038f1c14ec36404e7b01d65d81c08",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT",
+      "retrieved_at": "2026-09-12T04:21:49.522288+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.08064504441319234,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "une_rt_m__EU27_2020__2026-08__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-08 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "une_rt_m__EU27_2020__2026-08__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-08を対象とする失業率（季節調整済み、男女計・全年齢）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-08",
+    "release_target_id": "une_rt_m__EU27_2020__2026-08__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-08",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Unemployment",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": 100,
+      "minimum": 0,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.08064504441319234,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "une_rt_m__EU27_2020",
+    "series_key": {
+      "age": "TOTAL",
+      "freq": "M",
+      "geo": "EU27_2020",
+      "s_adj": "SA",
+      "sex": "T",
+      "unit": "PC_ACT"
+    },
+    "time": {
+      "presentation_utc": "2026-09-17T09:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-01T11:00Z",
+      "resolution_deadline_utc": "2026-10-02T09:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-01T11:00:00+02:00",
+      "scheduled_release_utc": "2026-10-01T09:00:00+00:00",
+      "submission_deadline_utc": "2026-09-17T11:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent of labour force"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494406",
+    "dataset": "une_rt_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": 6.1
+    },
+    "indicator_label_ja": "失業率（季節調整済み、男女計・全年齢）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-04T23:00:00+0200",
+      "history_file": "management/raw/history_une_rt_m.json",
+      "history_sha256": "f7aadb39e4b9116a292faba3d10a3b1150a038f1c14ec36404e7b01d65d81c08",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT",
+      "retrieved_at": "2026-09-12T04:21:49.522288+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.08064504441319234,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "une_rt_m__EU27_2020__2026-09__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-09 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "une_rt_m__EU27_2020__2026-09__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-09を対象とする失業率（季節調整済み、男女計・全年齢）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-09",
+    "release_target_id": "une_rt_m__EU27_2020__2026-09__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-09",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Unemployment",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": 100,
+      "minimum": 0,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.08064504441319234,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "une_rt_m__EU27_2020",
+    "series_key": {
+      "age": "TOTAL",
+      "freq": "M",
+      "geo": "EU27_2020",
+      "s_adj": "SA",
+      "sex": "T",
+      "unit": "PC_ACT"
+    },
+    "time": {
+      "presentation_utc": "2026-10-16T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-10-30T11:00Z",
+      "resolution_deadline_utc": "2026-10-31T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-10-30T11:00:00+01:00",
+      "scheduled_release_utc": "2026-10-30T10:00:00+00:00",
+      "submission_deadline_utc": "2026-10-16T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent of labour force"
+  },
+  {
+    "account_version": "1.0",
+    "calendar_package_id": "22494600",
+    "dataset": "une_rt_m",
+    "eligibility_status": "PASS",
+    "execution_gate": "Reconfirm official schedule, detect early publication and enforce access rules before actual use.",
+    "forecast": {
+      "normalized_squared_error": null,
+      "point_estimate": null,
+      "squared_error": null,
+      "submitted_at": null
+    },
+    "forecast_format": "point_forecast",
+    "geography_label": "European Union - 27 countries (from 2020)",
+    "global_rules": "../../global/global_rules.md",
+    "historical_reference": {
+      "period": "2026-07",
+      "status_flag": "",
+      "value": 6.1
+    },
+    "indicator_label_ja": "失業率（季節調整済み、男女計・全年齢）",
+    "input_provenance": {
+      "calendar_snapshot_sha256": "9de1082906053bd14729b87b42f65d373bab0207a91f590efabe89fa5ec67e72",
+      "dataset_updated": "2026-09-04T23:00:00+0200",
+      "history_file": "management/raw/history_une_rt_m.json",
+      "history_sha256": "f7aadb39e4b9116a292faba3d10a3b1150a038f1c14ec36404e7b01d65d81c08",
+      "history_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT",
+      "retrieved_at": "2026-09-12T04:21:49.522288+00:00"
+    },
+    "local_rules": "local_rules.md",
+    "materials": [
+      "question.md",
+      "account.json",
+      "data/history.csv",
+      "materials.md"
+    ],
+    "normalization": {
+      "ddof": 1,
+      "method": "sample_standard_deviation",
+      "n": 24,
+      "period_end": "2026-07",
+      "period_start": "2024-08",
+      "role": "fixed positive error normalization; not a forecast or target value",
+      "scale_s": 0.08064504441319234,
+      "source": "data/history.csv",
+      "unit": "percentage points"
+    },
+    "paired_binary_question_id": "une_rt_m__EU27_2020__2026-10__first__above_anchor",
+    "publisher": "Eurostat",
+    "question_en": "For European Union - 27 countries (from 2020), forecast the first published 2026-10 value of the exact series specified in series_key. Submit one numerical estimate of its conditional mean given the supplied information, in percent (enter 6.1 for 6.1%).",
+    "question_id": "une_rt_m__EU27_2020__2026-10__first__conditional_mean",
+    "question_ja": "EU27か国全体について、2026-10を対象とする失業率（季節調整済み、男女計・全年齢）の初回公表値を予測せよ。提供情報に条件付けた平均の推定値を、%単位の数値一つで提出せよ（例：6.1 %は6.1と記入する）。",
+    "reference_month": "2026-10",
+    "release_target_id": "une_rt_m__EU27_2020__2026-10__first",
+    "resolution": {
+      "future_document_url": null,
+      "numeric_outcome": null,
+      "observed_value": null,
+      "reference_month": "2026-10",
+      "rule": "use the archived first-release published numeric value directly; no YES/NO conversion",
+      "source_entrypoint": "https://ec.europa.eu/eurostat/news/euro-indicators",
+      "source_locator": "calendar title + scheduled release date + target reference month + exact series dimensions; record actual document URL/hash/time at resolution",
+      "source_title": "Unemployment",
+      "status": "NOT_YET_RELEASED",
+      "transform": "identity",
+      "vintage": "first official publication of target numeric value"
+    },
+    "response_contract": {
+      "field": "point_estimate",
+      "maximum": 100,
+      "minimum": 0,
+      "out_of_range": "invalid; retain raw submission; no clipping",
+      "target_functional": "conditional_mean",
+      "type": "finite_real",
+      "unit": "percent"
+    },
+    "scoring": {
+      "normalization_scale": 0.08064504441319234,
+      "per_question_loss": "((point_estimate-numeric_outcome)/scale_s)^2",
+      "primary_metric": "NMSE",
+      "unresolved": "null, excluded with denominator reported",
+      "within_series_metric": "MSE"
+    },
+    "series_cluster_id": "une_rt_m__EU27_2020",
+    "series_key": {
+      "age": "TOTAL",
+      "freq": "M",
+      "geo": "EU27_2020",
+      "s_adj": "SA",
+      "sex": "T",
+      "unit": "PC_ACT"
+    },
+    "time": {
+      "presentation_utc": "2026-11-18T10:00:00+00:00",
+      "raw_calendar_allDay": true,
+      "raw_calendar_start": "2026-12-02T11:00Z",
+      "resolution_deadline_utc": "2026-12-03T10:00:00+00:00",
+      "schedule_status": "POLICY_DERIVED_TENTATIVE",
+      "scheduled_release_local": "2026-12-02T11:00:00+01:00",
+      "scheduled_release_utc": "2026-12-02T10:00:00+00:00",
+      "submission_deadline_utc": "2026-11-18T12:00:00+00:00",
+      "time_evidence": [
+        "management/raw/protocol_access.html",
+        "management/raw/calendar_ui.html"
+      ],
+      "time_interpretation": "Official first-release 11 am CET policy interpreted as Luxembourg civil time using calendar UI timezone. Feed allDay=true start time is not treated as verified UTC. Reconfirm before execution."
+    },
+    "unit_description": "percent of labour force"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "candidate_questions": 36,
+  "eligible_questions": 36,
+  "forecast_runs": 0,
+  "history_rows": 720,
+  "new_random_draws": 0,
+  "positive_scales_candidates": 36,
+  "primary_metric": "NMSE",
+  "resolved_outcomes": 0,
+  "scores": 0,
+  "selected_accounts": 30,
+  "selected_release_packages": 17,
+  "selected_release_targets": 30,
+  "source_binary_selection_sha256": "96d79a72bb072282a6e7da7c0ba66c1f2c2d90c6087cfb459137282e23c9a010"
+}

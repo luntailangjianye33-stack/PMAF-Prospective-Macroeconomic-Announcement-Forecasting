@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/about-us/impartiality-protocol",
+  "requested_at": "2026-09-12T04:22:45.489267+00:00",
+  "retrieved_at": "2026-09-12T04:22:47.275213+00:00",
+  "status": 200,
+  "content_type": "text/html;charset=UTF-8",
+  "sha256": "558c2174d8c97cadb1ebbdd9f4356e6ff611f23d05ad250705675b1b925453a5",
+  "bytes": 179370,
+  "response_date": "Sat, 12 Sep 2026 04:22:46 GMT"
+}

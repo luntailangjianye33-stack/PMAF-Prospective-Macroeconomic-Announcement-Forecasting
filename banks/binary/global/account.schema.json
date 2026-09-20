@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "anchor": {
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "period",
+        "value"
+      ],
+      "type": "object"
+    },
+    "eligibility_status": {
+      "const": "PASS"
+    },
+    "forecast": {
+      "properties": {
+        "p_yes": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "question_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "reference_month": {
+      "pattern": "^20[0-9]{2}-(0[1-9]|1[0-2])$",
+      "type": "string"
+    },
+    "series_key": {
+      "required": [
+        "freq",
+        "unit",
+        "geo"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "question_id",
+    "account_version",
+    "release_target_id",
+    "calendar_package_id",
+    "series_key",
+    "reference_month",
+    "anchor",
+    "time",
+    "resolution",
+    "global_rules",
+    "materials"
+  ],
+  "title": "PMAF demonstration question account v1",
+  "type": "object"
+}

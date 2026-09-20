@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inppd_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=PRC_PRR_DOM&nace_r2=B-D&s_adj=NSA&unit=PCH_PRE",
+  "requested_at": "2026-09-12T04:21:46.930038+00:00",
+  "retrieved_at": "2026-09-12T04:21:49.479951+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "5b6426ebc2665a542b4ec1445893bcbdb2e04247aa64f3dc224ab478bb4a16d3",
+  "bytes": 6039,
+  "response_date": "Sat, 12 Sep 2026 04:21:48 GMT"
+}

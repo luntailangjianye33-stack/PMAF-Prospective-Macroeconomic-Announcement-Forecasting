@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "eligibility_status": {
+      "const": "PASS"
+    },
+    "forecast": {
+      "not": {
+        "required": [
+          "p_yes"
+        ]
+      },
+      "required": [
+        "point_estimate"
+      ],
+      "type": "object"
+    },
+    "forecast_format": {
+      "const": "point_forecast"
+    },
+    "normalization": {
+      "properties": {
+        "ddof": {
+          "const": 1
+        },
+        "n": {
+          "const": 24
+        },
+        "scale_s": {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "scale_s",
+        "n",
+        "ddof"
+      ],
+      "type": "object"
+    },
+    "resolution": {
+      "not": {
+        "required": [
+          "threshold"
+        ]
+      },
+      "required": [
+        "numeric_outcome"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "question_id",
+    "paired_binary_question_id",
+    "release_target_id",
+    "series_key",
+    "reference_month",
+    "time",
+    "response_contract",
+    "normalization",
+    "resolution",
+    "forecast",
+    "scoring"
+  ],
+  "title": "PMAF point account v1",
+  "type": "object"
+}

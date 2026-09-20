@@ -1,0 +1,10 @@
+{
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_trtu_m?lang=en&geo=EU27_2020&geo=EA21&sinceTimePeriod=2024-01&freq=M&indic_bt=VOL_SLS&nace_r2=G47&s_adj=SCA&unit=PCH_PRE",
+  "requested_at": "2026-09-12T04:21:49.510054+00:00",
+  "retrieved_at": "2026-09-12T04:21:54.010339+00:00",
+  "status": 200,
+  "content_type": "application/json",
+  "sha256": "2498b2dfcc2f2afe5bb2881ad1bacfd3da74518f5c4ee5b159db765d781f0b8e",
+  "bytes": 5271,
+  "response_date": "Sat, 12 Sep 2026 04:21:53 GMT"
+}
