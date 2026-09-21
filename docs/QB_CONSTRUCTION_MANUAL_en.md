@@ -8,10 +8,12 @@ This guide explains how to configure an experiment, select questions from schedu
 
 Choose geographical areas, statistical agencies, periods, and question counts to suit your evaluation objective. **Sections labeled “Example: Eurostat” describe the published construction example and its code.** Those choices are not general PMAF requirements.
 
+**Sequence for a new QB:** Construct and validate the QB → rebuild from archived inputs and check agreement → formally freeze → begin forecasting. Perform the rebuild check immediately after construction, before the experiment starts.
+
 | Your task | Start here |
 | --- | --- |
 | Create a new QB | Follow the guide from [1. Prepare](#prepare) |
-| Rebuild a QB from archived inputs | [8. Regenerate](#regenerate) |
+| Rebuild a QB from archived inputs | [7. Rebuild and check agreement](#regenerate) |
 | Look up configuration items or files | [Configuration, files, and implementation reference](QB_REFERENCE_en.md) |
 | Resolve an error or an unverified condition | [9. Troubleshoot](#troubleshoot) |
 
@@ -138,39 +140,26 @@ The example disables network access during forecasting and prohibits prediction 
 
 The binary format asks for the probability that the first-release value strictly exceeds a fixed threshold; equality resolves to NO. The point format asks for the conditional mean of the same first-release value. Its aggregate metric is NMSE using fixed historical scales; MSE applies within each series–geographical-area group. See [account files and numerical conventions](QB_REFERENCE_en.md#accounts).
 
-<a id="freeze"></a>
-## 7. Validate and freeze the QuestionBank
-
-**Before you begin:** Have the QB with completed materials, eligibility records, validation criteria, and the proposed freeze inventory ready.
-
-1. Check required fields, types, ranges, IDs, file references, series, units, time calculations, material vintages, sources, and stage counts. Compare question wording with the rules as well.
-2. Resolve failures of mandatory conditions. Record automated checks separately from human content review.
-3. Fix the scope to freeze: accounts, materials, rules, configuration, schemas, acceptance and sampling records, source inputs, construction code, and other required files. Manage subsequent changes as new versions.
-4. With file contents stable, save an inventory of relative paths, byte sizes, and SHA-256 hashes. The distributed example names this file `manifest.json`.
-5. Save the hash of the actual manifest, version, operator, declared time, and check results in a freeze record. Exclude the manifest itself and the freeze record from that manifest's inventory.
-6. Recheck the saved inventory and hashes. If you need evidence that a version existed before presentation, obtain independent time evidence before the first presentation.
-
-**Check completion:** A QB satisfying the mandatory conditions can be identified, and its inventory, contents, and version can be reverified. Local hashes and declared times alone do not prove past existence to third parties. See [freezing and publication](QB_REFERENCE_en.md#freeze-reference).
-
-**Example: Eurostat**
-
-Each QB has `manifest.json` and `freeze.json`; the distribution package has `ARTIFACT_MANIFEST.json`. Accounts are within the freeze scope, while manuals are in the outer `docs/` directory. No external timestamp was obtained. Store future prediction, resolution, and scoring records separately, referencing the QB version and question ID rather than overwriting the original accounts.
-
 <a id="regenerate"></a>
-## 8. Regenerate a QuestionBank from archived inputs
+## 7. Rebuild the QB from archived inputs and check agreement
 
-**Objective:** Check whether the same inputs and implementation reproduce the archived construction outputs.
+**When to do this:** Immediately after constructing a new QB, before its formal freeze and the start of forecasting. Check early so that defects can be corrected; do not wait for the experiment to end.
+
+**Objective:** Rebuild (regenerate) the QB from archived inputs using the same configuration, code, and dependency environment, and compare it with the initial build. This does not include retrieving updated data from the sources.
 
 **Before you begin:** Have the source snapshots, construction configuration and code, dependency environment, reference QB, and a new output location ready.
 
-1. Select the version to regenerate and obtain its matching inputs, configuration, code, and execution environment.
+1. Preserve the initial QB as the reference and obtain the inputs, configuration, code, and execution environment used to construct it. For a new build, the reference does not need to be formally frozen yet.
 2. Build into a location separate from the original QB. Retain the archived inputs instead of replacing them with newly retrieved data.
-3. Compare generated file inventories and contents with the reference version. Also run structure, reference, and calculation checks.
-4. Record the comparison scope, differences, and environment. If results differ, follow [Troubleshoot](#troubleshoot).
+3. Specify the files to compare in advance, then compare the rebuilt file inventory and hashes with the initial build. Keep changing execution times, run logs, and freeze records added after construction separate from build outputs, and document the comparison scope. Also run structure, reference, and calculation checks.
+4. Record the comparison scope, differences, and environment. Resolve discrepancies; if inputs, configuration, or code change, repeat the check on the revised QB. See [Troubleshoot](#troubleshoot).
+5. Once agreement and content checks are confirmed, proceed to [8. Validate and freeze the QuestionBank](#freeze). Begin forecasting only after the formal freeze.
 
 **Check completion:** Construction outputs agree under the specified comparison method. For byte-for-byte agreement, preserve line endings, encoding, and JSON key order as well. Check reproducibility and content correctness separately.
 
-### Example: Regenerate the Eurostat banks from archived inputs
+### Example: Rebuild and verify the published Eurostat banks
+
+The following example allows a third party to verify QBs that have already been published and frozen. This check can be performed later. When constructing a new QB, follow the sequence above and check it immediately after construction, before its formal freeze.
 
 This example uses PowerShell on Windows. Install Git and Python 3.13.9 first. Initial retrieval and environment setup use the network; regeneration is offline. Start in a location where you can create new directories.
 
@@ -220,6 +209,26 @@ Do not use `python -O`, because validation uses `assert`. `-B` suppresses byteco
    All checks should pass. This archived version has 540 binary and 574 point validation checks, and 221 and 216 files covered by the respective freeze inventories. These inventories cover a different scope from generated-file counts.
 
 See [retaining generated files](QB_REFERENCE_en.md#retain-output) and [implementation support](QB_REFERENCE_en.md#implementation) for further details.
+
+<a id="freeze"></a>
+## 8. Validate and freeze the QuestionBank
+
+**Before you begin:** Have the QB with completed materials, eligibility records, validation criteria, the proposed freeze inventory, and [the results of the rebuild comparison](#regenerate) ready.
+
+If inputs, configuration, code, or construction outputs change after the rebuild check, repeat the check on the revised QB before freezing. Hash verification at this stage checks whether the stored QB retains the contents recorded at freezing. The preceding rebuild check executes the construction process to determine whether it produces the same artifacts.
+
+1. Check required fields, types, ranges, IDs, file references, series, units, time calculations, material vintages, sources, and stage counts. Compare question wording with the rules as well.
+2. Resolve failures of mandatory conditions. Record automated checks separately from human content review.
+3. Fix the scope to freeze: accounts, materials, rules, configuration, schemas, acceptance and sampling records, source inputs, construction code, and other required files. Manage subsequent changes as new versions.
+4. With file contents stable, save an inventory of relative paths, byte sizes, and SHA-256 hashes. The distributed example names this file `manifest.json`.
+5. Save the hash of the actual manifest, version, operator, declared time, and check results in a freeze record. Exclude the manifest itself and the freeze record from that manifest's inventory.
+6. Recheck the saved inventory and hashes. If you need evidence that a version existed before presentation, obtain independent time evidence before the first presentation.
+
+**Check completion:** A QB satisfying the mandatory conditions can be identified, and its inventory, contents, and version can be reverified. Local hashes and declared times alone do not prove past existence to third parties. See [freezing and publication](QB_REFERENCE_en.md#freeze-reference).
+
+**Example: Eurostat**
+
+Each QB has `manifest.json` and `freeze.json`; the distribution package has `ARTIFACT_MANIFEST.json`. Accounts are within the freeze scope, while manuals are in the outer `docs/` directory. No external timestamp was obtained. Store future prediction, resolution, and scoring records separately, referencing the QB version and question ID rather than overwriting the original accounts.
 
 <a id="troubleshoot"></a>
 ## 9. Troubleshoot

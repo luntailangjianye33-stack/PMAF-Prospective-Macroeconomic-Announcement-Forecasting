@@ -201,6 +201,8 @@ JSON Schema's `$ref` refers to another schema and applies it. Additional checks 
 
 Mark construction complete after all mandatory items have been checked. Record automated PASS results, independent content review, and the validity of an actual forecasting experiment separately. Identical code can reproduce identical errors, so byte-for-byte agreement does not substitute for content validation.
 
+For a new QB, we recommend rebuilding it into a separate location from archived inputs using the same configuration, code, and dependency environment immediately after construction, before formal freezing and the start of forecasting, and checking agreement with the initial build. The comparison scope is specified in advance and distinguished from changing execution times, run logs, and freeze records added after construction. Discrepancies are resolved; changes to inputs, configuration, or code require a new check on the revised QB. Formal freezing and forecasting follow confirmation of agreement and content checks. Rebuilding uses archived inputs and does not retrieve updated source data. The same verification may also be performed after freezing, but need not wait until the experiment ends. This check evaluates the reproducibility of construction and is distinguished from using hashes to detect changes to frozen files and from reviewing the contents of questions and materials.
+
 <a id="freeze-reference"></a>
 ## 8. Manage freezing and subsequent records
 

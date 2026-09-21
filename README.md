@@ -13,7 +13,7 @@ The scheduled times are tentative policy-derived plans and must be reconfirmed b
 
 ## Construction manual
 
-The construction guide presents the general PMAF workflow, with Eurostat examples at each relevant step. It covers preparation, experiment configuration, acquisition, screening, selection, account assembly, validation, freezing, and regeneration. Concrete commands apply to the published Eurostat implementation; adapting it to other sources requires implementation changes.
+The construction guide presents the general PMAF workflow, with Eurostat examples at each relevant step. It covers preparation, experiment configuration, acquisition, screening, selection, account assembly, validation, a rebuild check from archived inputs, and formal freezing before forecasting begins. Concrete commands apply to the published Eurostat implementation; adapting it to other sources requires implementation changes.
 
 | Documentation | English | 日本語 |
 | --- | --- | --- |
