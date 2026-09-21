@@ -23,7 +23,7 @@ Choose geographical areas, statistical agencies, periods, and question counts to
 1. Define the capability and participants to evaluate. These might be AI systems or human forecasters predicting economic statistics.
 2. Identify sources for release schedules, statistical values, and definitions. Record the versions of the evaluation protocol and data schemas you will use.
 3. Prepare a working directory and a location for source materials. Keep any existing frozen version in a separate location.
-4. Assign responsibility and methods for collection, screening, and selection. You can use humans, AI, programs, database queries, or combinations of these. Record the operator or implementation version and the basis for decisions.
+4. Assign responsibility and methods for collection, screening, and selection. You can combine manual collection, processing by AI or programs, and searches of databases made publicly available by economic-statistics institutions or private companies. Record the operator or implementation version and the basis for decisions.
 
 **Check completion:** The evaluation objective, applicable rules, sources, responsibilities, and storage locations are specified.
 
@@ -50,7 +50,17 @@ The example uses scheduled releases in October–December 2026, EU27_2020 and EA
 <a id="collect"></a>
 ## 3. Collect release schedules and statistical data
 
-**Before you begin:** Have the collection conditions, official calendars or databases, statistical definitions, and storage locations ready.
+**Before you begin:** Have the collection conditions, databases and release calendars made publicly available by economic-statistics institutions or private companies, statistical definitions, and storage locations ready.
+
+Examples of databases and release calendars made publicly available by economic-statistics institutions or private companies include:
+
+| Source | Examples of information available |
+| --- | --- |
+| [Eurostat database](https://ec.europa.eu/eurostat/web/main/data/database) | EU-related statistical values, series definitions, and metadata. Check scheduled releases separately in the official Release calendar. |
+| [World Bank Open Data](https://data.worldbank.org/) | Economic and development indicators and historical observations for individual countries. Also verify the publication schedule before selecting a statistic as a forecasting target. |
+| [Trading Economics economic calendar](https://tradingeconomics.com/calendar) | Scheduled economic-indicator releases for multiple countries, published by a private company. Cross-check selected releases against materials from the original publishing institution. |
+
+Verify the availability of statistical values and release schedules separately. Public access to a webpage does not imply free API access or unrestricted data redistribution. Check the service's conditions for retrieval, storage, and redistribution.
 
 1. Retrieve scheduled releases for the specified agencies, geographical areas, and period. Preserve the query conditions, retrieval times, and raw responses.
 2. Identify the series, geographical area, reference period, unit, adjustment, and target vintage for each release. Expand releases containing multiple targets into individual targets.

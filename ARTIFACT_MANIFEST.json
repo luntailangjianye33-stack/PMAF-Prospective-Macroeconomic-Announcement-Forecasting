@@ -2219,13 +2219,13 @@
     },
     {
       "path": "docs/QB_CONSTRUCTION_MANUAL_en.md",
-      "bytes": 18939,
-      "sha256": "d5931af99f320d5ba03d2a283e50437fe7c745be58001377327c6a1c4b71740b"
+      "bytes": 20284,
+      "sha256": "289fa9a29e9a5f8861520e867f0478b60d6f7fcd23ae928b5c99d741f88ffd7e"
     },
     {
       "path": "docs/QB_CONSTRUCTION_MANUAL_ja.md",
-      "bytes": 20013,
-      "sha256": "959cb1a25506e476e2814d8fa0a3b6677a1ed1c0f59f8cc8e8e298c614c862c6"
+      "bytes": 21335,
+      "sha256": "d8306a2b5aa4df22240270136935f58c8769a2964adcf0cde1039358806894e0"
     },
     {
       "path": "docs/QB_MANUAL_VERIFICATION_20260920.json",
@@ -2288,5 +2288,5 @@
       "sha256": "c8672f9c0eded4c7995642cee62f92aac1d0210dbef58775fa2359c56b32c68d"
     }
   ],
-  "documentation_updated_at_utc": "2026-09-21T01:55:13.353720+00:00"
+  "documentation_updated_at_utc": "2026-09-21T02:12:27.867510+00:00"
 }
