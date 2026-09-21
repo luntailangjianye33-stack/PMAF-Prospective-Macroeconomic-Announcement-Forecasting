@@ -4,6 +4,8 @@ PMAF is a methodological framework for planning prospective forecasting evaluati
 
 **The protocol permits manual, software-mediated, AI-assisted, and combined operation. Git-based version control is recommended, not required.** A particular database, directory layout, file format, automatic execution system, or commit/push frequency is not prescribed.
 
+PMAF shares the forward-in-time outcome observation of [prospective research in medicine and epidemiology](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/prospective-cohort-study). [ICH E9(R1), 2019](https://database.ich.org/sites/default/files/E9-R1_Step4_Guideline_2019_1203.pdf) provides a methodological reference for aligning objectives, events arising during a study, and primary and supplementary analyses. PMAF adapts these ideas to forecast evaluation; its question-inclusion rules are its own design proposals.
+
 ## Start here
 
 | Resource | English | 日本語 |
@@ -52,3 +54,5 @@ Original code is licensed under [MIT](LICENSE). Eurostat data and metadata retai
 PMAFは、予定された経済統計の公表に基づき、問いの選定、時間・情報条件、事前固定、予測・判定・採点の記録を定める方法論です。手動・ソフトウェア・AIによる実行を許容し、Git等による版管理を推奨します。特定製品や自動コミット・プッシュを必須にしません。Gitによる自動コミット・プッシュは、記録の保存や追跡に役立つ可能性がある将来の実装案です。本成果物では実装しておらず、導入効果も検証していません。
 
 共通説明は `docs/`、今回のEurostat構築例は `examples/eurostat_2026q4/` に分けています。凍結済みQBには回答を書き込まず、実験ごとの保存先へ記録し、QBの版と問いIDで対応付けます。公開コードは構築・検証までを扱い、予測実行・受付・採点の自動運用は未実装です。
+
+設計思想の方法論上の接続として、[医学・疫学の前向き研究](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/prospective-cohort-study)と、結果を将来に向かって観測する時間的構造を共有します。また、評価目的、途中で生じる事象の扱い、主解析と補足解析の対応には[ICH E9(R1)](https://database.ich.org/sites/default/files/E9-R1_Step4_Guideline_2019_1203.pdf)を参照します。予測評価への具体的な適用規則はPMAFの提案です。

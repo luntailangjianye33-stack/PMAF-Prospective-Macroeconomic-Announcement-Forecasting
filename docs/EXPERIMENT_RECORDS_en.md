@@ -73,7 +73,9 @@ Git commit dates can be set by the user, so assess submission timing from recept
 <a id="timing-exceptions"></a>
 ## 6. Handle departures from timing conditions
 
-**Decide before the experiment:** In the evaluation protocol and experiment configuration, specify tolerances for presentation and publication timing and actual lead time, resolution and scoring deadlines, primary-analysis inclusion rules, and how to determine the common question set for comparisons. Fix these before collecting forecasts; do not relax them after inspecting forecasts or scores. The following is a recommended PMAF operating policy.
+**Decide before the experiment:** In the evaluation protocol and experiment configuration, specify tolerances for presentation and publication timing and actual lead time, resolution and scoring deadlines, primary-analysis inclusion rules, and how to determine the common question set for comparisons. Fix these before collecting forecasts; do not relax them after inspecting forecasts or scores.
+
+The alignment of objectives with events arising during a study and the distinction between primary and supplementary analyses draw on [ICH E9(R1), 2019, Sections A.2 and A.5.2–A.5.3](https://database.ich.org/sites/default/files/E9-R1_Step4_Guideline_2019_1203.pdf). That guideline concerns treatment-effect estimation. The forecast-evaluation inclusion rules below are proposed PMAF operating policy.
 
 | Situation | Primary analysis and records |
 | --- | --- |

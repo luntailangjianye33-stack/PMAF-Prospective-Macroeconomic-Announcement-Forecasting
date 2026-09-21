@@ -14,13 +14,13 @@
     },
     {
       "path": "docs/EXPERIMENT_RECORDS_en.md",
-      "bytes": 11885,
-      "sha256": "167e4d9c107d0065ca787bc296410da7875d5c4d1030b5a83be732c841cdbddd"
+      "bytes": 12235,
+      "sha256": "f783de677fc10167c9de93a401370ad38db51fcb8b1378091f00c3b570ab54eb"
     },
     {
       "path": "docs/EXPERIMENT_RECORDS_ja.md",
-      "bytes": 12173,
-      "sha256": "8e9f3dda13bb1a92a21eeacaf4922280e2b22f847c40c24978eb3a4a0d6ddc43"
+      "bytes": 12534,
+      "sha256": "012e7d0970756f72fd46498251415910aeebcae12d55e1b5a178ce6040a19586"
     },
     {
       "path": "docs/QB_CONSTRUCTION_MANUAL_en.md",
@@ -2294,8 +2294,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5270,
-      "sha256": "f70c82c4126bba8b7a1f41d01f4fefd9f0656d3b512976dce8641d51608d37ef"
+      "bytes": 6357,
+      "sha256": "6dadb89073ecd777fefa6112c7b5d5bd3023e5a24e8c0a9d7e89f88d357e6986"
     },
     {
       "path": "release_status.json",
