@@ -1,48 +1,54 @@
-# PMAF — paired binary and point QuestionBanks
+# PMAF — Prospective Macroeconomic Announcement Forecasting
 
-This repository contains two complete QuestionBanks for EU-related statistics scheduled for release in October–December 2026. A 30-target sample was drawn without replacement from 36 eligible release targets. The point bank reuses the same targets. These are 60 account representations of 30 targets across 17 release packages, not 60 independent observations.
+PMAF is a methodological framework for planning prospective forecasting evaluations around scheduled macroeconomic announcements. It specifies question eligibility, temporal and information conditions, advance fixation, and the records needed to connect questions, submissions, outcomes, and scores.
 
-| Artifact | Accounts | Response | Primary composite |
-|---|---:|---|---|
-| [Binary QB](banks/binary/README.md) | 30 | P(first-release value > fixed historical threshold) | Mean Brier score |
-| [Point QB](banks/point/README.md) | 30 | Conditional mean of first-release numeric value | NMSE with frozen historical scales |
+**The protocol permits manual, software-mediated, AI-assisted, and combined operation. Git-based version control is recommended, not required.** A particular database, directory layout, file format, automatic execution system, or commit/push frequency is not prescribed.
 
-Both formats use identical archived 24-month histories, release targets, presentation times and information rules. Network access is disabled during a future response session; prediction markets and republications of their probabilities are prohibited. Forecasting, outcome collection and performance scoring have not been executed.
+## Start here
 
-The scheduled times are tentative policy-derived plans and must be reconfirmed before execution. Local hashes and timestamps establish content correspondence only. No external timestamp or public registration is claimed.
-
-## Construction manual
-
-The construction guide presents the general PMAF workflow, with Eurostat examples at each relevant step. It covers preparation, experiment configuration, acquisition, screening, selection, account assembly, validation, a rebuild check from archived inputs, and formal freezing before forecasting begins. Concrete commands apply to the published Eurostat implementation; adapting it to other sources requires implementation changes.
-
-| Documentation | English | 日本語 |
+| Resource | English | 日本語 |
 | --- | --- | --- |
-| Task-based construction guide | [Read the guide](docs/QB_CONSTRUCTION_MANUAL_en.md) | [作成手順を読む](docs/QB_CONSTRUCTION_MANUAL_ja.md) |
-| Configuration, file, and implementation reference | [Look up details](docs/QB_REFERENCE_en.md) | [設定・ファイル・実装の詳細](docs/QB_REFERENCE_ja.md) |
+| Construct a QuestionBank | [Construction guide](docs/QB_CONSTRUCTION_MANUAL_en.md) | [QB作成ガイド](docs/QB_CONSTRUCTION_MANUAL_ja.md) |
+| Configure and inspect artifacts | [Detailed reference](docs/QB_REFERENCE_en.md) | [設定・ファイル・実装の詳細](docs/QB_REFERENCE_ja.md) |
+| Separate frozen inputs and execution records | [Execution and record guide](docs/EXPERIMENT_RECORDS_en.md) | [実行と記録のガイド](docs/EXPERIMENT_RECORDS_ja.md) |
+| Inspect the concrete example | [Eurostat 2026 Q4](examples/eurostat_2026q4/README.md) | 同じページに日本語の説明があります |
 
-## Reproduce and verify
+## What is implemented
 
-Use the Python version recorded in banks/binary/management/runtime.json and dependencies in requirements.txt.
+The Eurostat example provides two frozen banks, each containing 30 accounts for the same 30 release targets, together with archived inputs and construction, validation, and reproduction code. These are 60 representations of 30 targets, not 60 independent observations. Forecast execution, outcome collection, and forecasting-performance scoring have not been performed. The example is not a general-purpose PMAF execution engine.
+
+Keep frozen QBs unchanged. Store later submissions, supporting evidence, access records, outcomes, and scores separately, linking them to the appropriate QB version and question. Actual experiment records can be held in an experimenter's own storage; this public repository need not receive live answers. The execution guide explains manual operation and possible future automation. Automatic Git commits and pushes are a possible future implementation that may help preserve and trace records. They are not implemented in this artifact, and their benefits have not been evaluated.
+
+## Repository layout
+
+```text
+docs/                         General PMAF guidance, with labeled examples
+examples/eurostat_2026q4/      Eurostat banks, inputs, scripts, and validation records
+scripts/verify_artifact.py    Verify the outer publication-package inventory
+ARTIFACT_MANIFEST.json        Inventory of the current publication package
+```
+
+## Verify the example
+
+From the repository root, use Python 3.13.9 and install the versions in `examples/eurostat_2026q4/requirements.txt` in an environment outside this repository. Do not use `python -O`. Stop and investigate any failed check.
 
 ```sh
 python -B scripts/verify_artifact.py .
-python -B scripts/reproduce.py .
-python -B banks/binary/scripts/validate.py banks/binary
-python -B banks/point/scripts/validate_point.py --binary banks/binary --point banks/point
-python -B scripts/verify_freeze.py banks/binary
-python -B scripts/verify_freeze.py banks/point
+python -B examples/eurostat_2026q4/scripts/reproduce.py examples/eurostat_2026q4
+python -B examples/eurostat_2026q4/banks/binary/scripts/validate.py examples/eurostat_2026q4/banks/binary
+python -B examples/eurostat_2026q4/banks/point/scripts/validate_point.py --binary examples/eurostat_2026q4/banks/binary --point examples/eurostat_2026q4/banks/point
+python -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/binary
+python -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/point
 ```
 
-Reproduction is offline, using archived responses. Every build-produced file is compared byte-for-byte by hash. Manifest checks cover post-build verification and freeze supplements. Raw acquisition failures and exploratory queries remain in the provenance records. The original local binary archive has not been modified; this distribution omits private manuscript reference copies and their local-path index, retaining all accounts, source responses, rules and build outputs.
+## Versions and attribution
 
-## Publication and attribution
+Record the exact Git commit used. The initial publication is commit `34bee8d0622d4735da7ed28342fb8481e547529b`; its root-level layout remains accessible through Git history. The current example README documents the layout migration and preserves the original bank contents. Updated documentation describes recommendations, not experimental procedures newly performed on those banks.
 
-The artifact repository is [the PMAF repository](https://github.com/luntailangjianye33-stack/PMAF-Prospective-Macroeconomic-Announcement-Forecasting). Both Eurostat QBs and the bilingual construction manual are provided together. Original code is licensed under MIT; see LICENSE. Cite the exact Git commit for the version used. No GitHub Release, DOI, or independent timestamp is claimed. The commit ID is obtained from Git rather than embedded in its own contents. Data and official metadata are attributed to Eurostat, with source URLs and retrieval provenance in each bank. No license to third-party source material is granted by this repository. Consult the linked original sources for their reuse terms.
+Original code is licensed under [MIT](LICENSE). Eurostat data and metadata retain their original terms; source URLs and retrieval provenance are preserved. A commit ID identifies a saved version; it does not independently prove submission time, scientific validity, or actual use of those materials.
 
 ## 日本語
 
-二値確率版30口座と点予測版30口座の全文、過去データ、共通・個別規約、全候補・採否・乱数・原応答・再生成コードを収録する。両版は同じ30発表対象を共有する。論文では代表的口座と構築件数を示し、全件を本資料から参照する構成とした。工学的なQB作成マニュアルの日英両版も含め、両QBと同じ[PMAFリポジトリ](https://github.com/luntailangjianye33-stack/PMAF-Prospective-Macroeconomic-Announcement-Forecasting)に収録する。利用した版はGitコミットIDで指定する。GitHub Release・DOI・独立したタイムスタンプの取得は主張しない。自作コードのライセンスはMITとし、第三者資料には元の利用条件を適用する。
+PMAFは、予定された経済統計の公表に基づき、問いの選定、時間・情報条件、事前固定、予測・判定・採点の記録を定める方法論です。手動・ソフトウェア・AIによる実行を許容し、Git等による版管理を推奨します。特定製品や自動コミット・プッシュを必須にしません。Gitによる自動コミット・プッシュは、記録の保存や追跡に役立つ可能性がある将来の実装案です。本成果物では実装しておらず、導入効果も検証していません。
 
-[Representative paired accounts used in the paper](manuscript/paired_account_examples.md)
-
-For exact byte-level binary regeneration, the root reproduction command uses management/build_input_config.json, which preserves the original JSON key order used in formatted strings. It has the same configuration values as global/config.json.
+共通説明は `docs/`、今回のEurostat構築例は `examples/eurostat_2026q4/` に分けています。凍結済みQBには回答を書き込まず、実験ごとの保存先へ記録し、QBの版と問いIDで対応付けます。公開コードは構築・検証までを扱い、予測実行・受付・採点の自動運用は未実装です。

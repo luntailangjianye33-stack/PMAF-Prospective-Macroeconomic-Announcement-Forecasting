@@ -1,6 +1,6 @@
 # Create a QuestionBank with PMAF
 
-Version: 0.2 / Updated: 2026-09-21
+Version: 0.3 / Updated: 2026-09-21
 
 [日本語](QB_CONSTRUCTION_MANUAL_ja.md) · [Configuration, files, and implementation reference](QB_REFERENCE_en.md)
 
@@ -8,7 +8,9 @@ This guide explains how to configure an experiment, select questions from schedu
 
 Choose geographical areas, statistical agencies, periods, and question counts to suit your evaluation objective. **Sections labeled “Example: Eurostat” describe the published construction example and its code.** Those choices are not general PMAF requirements.
 
-**Sequence for a new QB:** Construct and validate the QB → rebuild from archived inputs and check agreement → formally freeze → begin forecasting. Perform the rebuild check immediately after construction, before the experiment starts.
+**Sequence for a new QB:** Construct and validate the QB → reverify using a method appropriate to its construction → formally freeze → begin forecasting. For programmatic construction, a rebuild check immediately after construction and before forecasting is recommended.
+
+**Choose an operating method:** Manual, software-mediated, AI-assisted, and combined operation are supported. Git-based version control and rebuild checks for programmatically constructed QBs are recommended options. Specific formats, automated execution, and automatic commits or pushes are not mandatory. Fix the QB version, link records, retain corrections, and preserve the required evidence using suitable methods. See the [execution and record guide](EXPERIMENT_RECORDS_en.md). Automatic Git commits and pushes are a possible future implementation that may help preserve and trace records. They are not implemented in this artifact, and their benefits have not been evaluated.
 
 | Your task | Start here |
 | --- | --- |
@@ -47,7 +49,7 @@ The published code constructs, validates, and regenerates QBs for selected Euros
 
 **Example: Eurostat**
 
-The example uses scheduled releases in October–December 2026, EU27_2020 and EA21, six datasets, 30 questions, a lead time of 336 hours, a response duration of 2 hours, and a post-release processing allowance of 24 hours. Settings are in `banks/binary/global/config.json`. The implementation reads JSON; it does not directly load YAML or provide a complete schema for the entire configuration.
+The example uses scheduled releases in October–December 2026, EU27_2020 and EA21, six datasets, 30 questions, a lead time of 336 hours, a response duration of 2 hours, and a post-release processing allowance of 24 hours. Settings are in `examples/eurostat_2026q4/banks/binary/global/config.json`. The implementation reads JSON; it does not directly load YAML or provide a complete schema for the entire configuration.
 
 <a id="collect"></a>
 ## 3. Collect release schedules and statistical data
@@ -143,7 +145,9 @@ The binary format asks for the probability that the first-release value strictly
 <a id="regenerate"></a>
 ## 7. Rebuild the QB from archived inputs and check agreement
 
-**When to do this:** Immediately after constructing a new QB, before its formal freeze and the start of forecasting. Check early so that defects can be corrected; do not wait for the experiment to end.
+**Scope:** Rerunning code is recommended for programmatically constructed QBs. For manual construction, retain source materials, settings, construction procedures, and selection decisions so that others can trace and reverify the work. The commands below apply to the Eurostat implementation.
+
+**When to do this:** When a rebuild check is adopted, perform it immediately after constructing a new QB, before its formal freeze and the start of forecasting. Check early so that defects can be corrected; do not wait for the experiment to end.
 
 **Objective:** Rebuild (regenerate) the QB from archived inputs using the same configuration, code, and dependency environment, and compare it with the initial build. This does not include retrieving updated data from the sources.
 
@@ -153,7 +157,7 @@ The binary format asks for the probability that the first-release value strictly
 2. Build into a location separate from the original QB. Retain the archived inputs instead of replacing them with newly retrieved data.
 3. Specify the files to compare in advance, then compare the rebuilt file inventory and hashes with the initial build. Keep changing execution times, run logs, and freeze records added after construction separate from build outputs, and document the comparison scope. Also run structure, reference, and calculation checks.
 4. Record the comparison scope, differences, and environment. Resolve discrepancies; if inputs, configuration, or code change, repeat the check on the revised QB. See [Troubleshoot](#troubleshoot).
-5. Once agreement and content checks are confirmed, proceed to [8. Validate and freeze the QuestionBank](#freeze). Begin forecasting only after the formal freeze.
+5. Once agreement is confirmed where a rebuild check is adopted, and content checks are complete, proceed to [8. Validate and freeze the QuestionBank](#freeze). Begin forecasting only after the formal freeze.
 
 **Check completion:** Construction outputs agree under the specified comparison method. For byte-for-byte agreement, preserve line endings, encoding, and JSON key order as well. Check reproducibility and content correctness separately.
 
@@ -165,12 +169,12 @@ This example uses PowerShell on Windows. Install Git and Python 3.13.9 first. In
 
 Do not use `python -O`, because validation uses `assert`. `-B` suppresses bytecode caches. Keep environments, logs, and additional outputs outside the distribution directory.
 
-1. Retrieve the public repository and select its initial published version. To try later code, use the instructions and verification record for that version.
+1. Retrieve the public repository and record the displayed commit ID. Check out that ID to obtain the same version later. Initial publication commit 34bee8d uses a different layout; follow the instructions stored in that version when using it.
 
    ```powershell
    git clone https://github.com/luntailangjianye33-stack/PMAF-Prospective-Macroeconomic-Announcement-Forecasting.git pmaf-example
    Set-Location pmaf-example
-   git checkout 34bee8d0622d4735da7ed28342fb8481e547529b
+   git rev-parse HEAD
    ```
 
 2. Check that `python --version` reports `Python 3.13.9`, then create a dedicated environment. Use a new location for `../pmaf-qb-venv`.
@@ -178,7 +182,7 @@ Do not use `python -O`, because validation uses `assert`. `-B` suppresses byteco
    ```powershell
    python --version
    python -m venv ../pmaf-qb-venv
-   & ../pmaf-qb-venv/Scripts/python.exe -m pip install -r requirements.txt
+   & ../pmaf-qb-venv/Scripts/python.exe -m pip install -r examples/eurostat_2026q4/requirements.txt
    ```
 
 3. Check that the distribution matches its inventory. Perform subsequent operations from the repository directory.
@@ -192,7 +196,7 @@ Do not use `python -O`, because validation uses `assert`. `-B` suppresses byteco
 4. Regenerate both QBs from archived inputs.
 
    ```powershell
-   & ../pmaf-qb-venv/Scripts/python.exe -B scripts/reproduce.py .
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/scripts/reproduce.py examples/eurostat_2026q4
    ```
 
    Check that `status` is `PASS`, `binary_generated_files_identical` is 207, and `point_generated_files_identical` is 211. Generated files are placed in temporary directories and removed when the operation finishes. The original QBs remain unchanged.
@@ -200,10 +204,10 @@ Do not use `python -O`, because validation uses `assert`. `-B` suppresses byteco
 5. Validate contents and freeze records. Run each line in order; if a command fails, investigate before proceeding.
 
    ```powershell
-   & ../pmaf-qb-venv/Scripts/python.exe -B banks/binary/scripts/validate.py banks/binary
-   & ../pmaf-qb-venv/Scripts/python.exe -B banks/point/scripts/validate_point.py --binary banks/binary --point banks/point
-   & ../pmaf-qb-venv/Scripts/python.exe -B scripts/verify_freeze.py banks/binary
-   & ../pmaf-qb-venv/Scripts/python.exe -B scripts/verify_freeze.py banks/point
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/banks/binary/scripts/validate.py examples/eurostat_2026q4/banks/binary
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/banks/point/scripts/validate_point.py --binary examples/eurostat_2026q4/banks/binary --point examples/eurostat_2026q4/banks/point
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/binary
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/point
    ```
 
    All checks should pass. This archived version has 540 binary and 574 point validation checks, and 221 and 216 files covered by the respective freeze inventories. These inventories cover a different scope from generated-file counts.
@@ -213,7 +217,9 @@ See [retaining generated files](QB_REFERENCE_en.md#retain-output) and [implement
 <a id="freeze"></a>
 ## 8. Validate and freeze the QuestionBank
 
-**Before you begin:** Have the QB with completed materials, eligibility records, validation criteria, the proposed freeze inventory, and [the results of the rebuild comparison](#regenerate) ready.
+**Implementation example:** The manifest and SHA-256 procedure below is a recommended implementation of verifiable advance fixation. If another method is used, specify how contents, versions, changes, and any required time evidence will be checked.
+
+**Before you begin:** Have the QB with completed materials, eligibility records, validation criteria, the proposed freeze inventory, and the results of the chosen reverification method (such as [the rebuild comparison](#regenerate) for programmatic construction) ready.
 
 If inputs, configuration, code, or construction outputs change after the rebuild check, repeat the check on the revised QB before freezing. Hash verification at this stage checks whether the stored QB retains the contents recorded at freezing. The preceding rebuild check executes the construction process to determine whether it produces the same artifacts.
 

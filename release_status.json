@@ -9,10 +9,15 @@
   "data_attribution": "Eurostat; original URLs, snapshots and retrieval provenance retained",
   "privacy_scope": "QB materials and reproducibility code; excludes private manuscript copies and local absolute path index",
   "manual_path": "docs/QB_CONSTRUCTION_MANUAL_ja.md",
-  "publication_plan": "Distribute both Eurostat QBs and the Japanese and English construction manuals together in this repository.",
+  "publication_plan": "General PMAF guidance in docs; unchanged frozen Eurostat construction artifacts under examples/eurostat_2026q4. Execution and automatic Git push are not implemented.",
   "manual_paths": {
     "ja": "docs/QB_CONSTRUCTION_MANUAL_ja.md",
     "en": "docs/QB_CONSTRUCTION_MANUAL_en.md"
   },
-  "version_identification": "Use the Git commit containing this file; its own commit ID is not embedded to avoid self-reference."
+  "version_identification": "Use the Git commit containing this file; its own commit ID is not embedded to avoid self-reference.",
+  "example_path": "examples/eurostat_2026q4",
+  "execution_guides": {
+    "ja": "docs/EXPERIMENT_RECORDS_ja.md",
+    "en": "docs/EXPERIMENT_RECORDS_en.md"
+  }
 }

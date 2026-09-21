@@ -1,6 +1,6 @@
 # PMAF Configuration, Files, and Implementation Reference
 
-Version: 0.2 / Updated: 2026-09-21
+Version: 0.3 / Updated: 2026-09-21
 
 [Return to the construction guide](QB_CONSTRUCTION_MANUAL_en.md) · [日本語](QB_REFERENCE_ja.md)
 
@@ -58,41 +58,38 @@ Distinguish writing configuration values in JSON or YAML from defining a schema 
 | Eligible set C | Questions confirmed to satisfy mandatory conditions | 36 questions; the question-level sampling frame |
 | Selected set Q | Questions selected from C | 30 questions |
 | Question account | A unit linking one question to its materials, time and information conditions, and resolution rules | `accounts/<question_id>/` |
-| QuestionBank | A managed collection of question accounts, global rules, indexes, and construction records | `banks/binary/` or `banks/point/` |
+| QuestionBank | A managed collection of question accounts, global rules, indexes, and construction records | `examples/eurostat_2026q4/banks/binary/` or `examples/eurostat_2026q4/banks/point/` |
 
 Distinguish a dataset code from a series. For example, `une_rt_m` alone does not identify one unemployment-rate series. Specify the dimension values as well, such as `freq=M`, `s_adj=SA`, `age=TOTAL`, `sex=T`, `unit=PC_ACT`, and `geo=EU27_2020`. Use the [Eurostat metadata](https://ec.europa.eu/eurostat/cache/metadata/en/une_rt_m_esms.htm) to check that the combination represents the intended target.
 
 ```text
 repository/
 ├── README.md
-├── requirements.txt
+├── LICENSE
 ├── release_status.json
-├── ARTIFACT_MANIFEST.json       Inventory for the distribution package
-├── docs/
-│   ├── QB_CONSTRUCTION_MANUAL_ja.md
-│   ├── QB_CONSTRUCTION_MANUAL_en.md
-│   ├── QB_REFERENCE_ja.md
-│   └── QB_REFERENCE_en.md
+├── ARTIFACT_MANIFEST.json
+├── docs/                         PMAF guides / 共通ガイド
 ├── scripts/
-│   ├── reproduce.py
-│   ├── verify_artifact.py
-│   └── verify_freeze.py
-├── manuscript/
-│   └── paired_account_examples.md
-└── banks/
-    ├── binary/
-    │   ├── global/              Global rules, configuration, account schema
-    │   ├── accounts/<question_id>/
-    │   │   ├── question.md
-    │   │   ├── account.json
-    │   │   ├── materials.md
-    │   │   ├── local_rules.md
-    │   │   └── data/history.csv
-    │   ├── management/          Candidates, decisions, draws, raw responses, provenance
-    │   ├── scripts/
-    │   ├── manifest.json        Inventory of files covered by this QB's manifest
-    │   └── freeze.json          Record referencing the manifest hash
-    └── point/                  Point-forecast bank; same basic layout
+│   └── verify_artifact.py
+└── examples/
+    └── eurostat_2026q4/
+        ├── README.md
+        ├── requirements.txt
+        ├── verification.json
+        ├── layout_verification.json
+        ├── scripts/
+        │   ├── reproduce.py
+        │   └── verify_freeze.py
+        ├── manuscript/paired_account_examples.md
+        └── banks/
+            ├── binary/
+            │   ├── global/
+            │   ├── accounts/<question_id>/
+            │   ├── management/
+            │   ├── scripts/
+            │   ├── manifest.json
+            │   └── freeze.json
+            └── point/
 ```
 
 Place global rules outside individual accounts but inside the QB. Specify what forecasters receive through the account's `materials` entries and the global rules. Do not distribute `management/` or other accounts indiscriminately. Keep the manual in `docs/`, outside the frozen QBs, so that documentation updates do not alter existing account hashes.
@@ -201,10 +198,14 @@ JSON Schema's `$ref` refers to another schema and applies it. Additional checks 
 
 Mark construction complete after all mandatory items have been checked. Record automated PASS results, independent content review, and the validity of an actual forecasting experiment separately. Identical code can reproduce identical errors, so byte-for-byte agreement does not substitute for content validation.
 
-For a new QB, we recommend rebuilding it into a separate location from archived inputs using the same configuration, code, and dependency environment immediately after construction, before formal freezing and the start of forecasting, and checking agreement with the initial build. The comparison scope is specified in advance and distinguished from changing execution times, run logs, and freeze records added after construction. Discrepancies are resolved; changes to inputs, configuration, or code require a new check on the revised QB. Formal freezing and forecasting follow confirmation of agreement and content checks. Rebuilding uses archived inputs and does not retrieve updated source data. The same verification may also be performed after freezing, but need not wait until the experiment ends. This check evaluates the reproducibility of construction and is distinguished from using hashes to detect changes to frozen files and from reviewing the contents of questions and materials.
+For a programmatically constructed QB, we recommend rebuilding it into a separate location from archived inputs using the same configuration, code, and dependency environment immediately after construction, before formal freezing and the start of forecasting, and checking agreement with the initial build. The comparison scope is specified in advance and distinguished from changing execution times, run logs, and freeze records added after construction. Discrepancies are resolved; changes to inputs, configuration, or code require a new check on the revised QB. Formal freezing and forecasting follow confirmation of agreement and content checks. Rebuilding uses archived inputs and does not retrieve updated source data. The same verification may also be performed after freezing, but need not wait until the experiment ends. This check evaluates the reproducibility of construction and is distinguished from using hashes to detect changes to frozen files and from reviewing the contents of questions and materials.
+
+**Choose an operating method:** Manual, software-mediated, AI-assisted, and combined operation are supported. Git-based version control and rebuild checks for programmatically constructed QBs are recommended options. Specific formats, automated execution, and automatic commits or pushes are not mandatory. Fix the QB version, link records, retain corrections, and preserve the required evidence using suitable methods. See the [execution and record guide](EXPERIMENT_RECORDS_en.md). Automatic Git commits and pushes are a possible future implementation that may help preserve and trace records. They are not implemented in this artifact, and their benefits have not been evaluated.
 
 <a id="freeze-reference"></a>
 ## 8. Manage freezing and subsequent records
+
+This section describes a recommended manifest-and-hash implementation. It can also support manual experiments; PMAF does not mandate this file format or Git.
 
 ### Fix the scope of the freeze
 
@@ -231,7 +232,7 @@ The file-inventory and checksum approach draws on [BagIt RFC 8493](https://www.r
 
 Local clocks and hashes support checks of preserved content. To demonstrate to third parties that a version was fixed before presentation, associate its manifest digest or an equivalent digest with independent time evidence before the first presentation. A timestamp based on [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) is one option. The archived version has no external timestamp. Evidence obtained later does not retroactively establish an earlier existence time.
 
-Append prediction, resolution, and scoring records outside the frozen version, linking them through QB ID, version, question ID, run ID, and manifest hash. Do not overwrite null fields in the original frozen accounts with experimental results. If private files are omitted for distribution, create a distribution version with a separate manifest and record the omissions and its relationship to the original version.
+Append prediction, resolution, and scoring records outside the frozen version, linking them through QB ID, version, question ID, run ID, and the manifest hash when a manifest is used. Do not overwrite null fields in the original frozen accounts with experimental results. If private files are omitted for distribution, create a distribution version with a separate manifest and record the omissions and its relationship to the original version.
 
 <a id="implementation"></a>
 ## 9. Example: Adapt the published code to another experiment
@@ -257,7 +258,7 @@ The archived example retains the Japanese unemployment label “全年齢” (�
 
 ### Match the environment
 
-The construction environment is recorded in `banks/binary/management/runtime.json`.
+The construction environment is recorded in `examples/eurostat_2026q4/banks/binary/management/runtime.json`.
 
 | Component | Recorded version |
 | --- | --- |
@@ -270,7 +271,7 @@ Use an environment with Python 3.13.9 and check `python --version`. The followin
 
 ```powershell
 python -m venv ../pmaf-qb-venv
-& ../pmaf-qb-venv/Scripts/python.exe -m pip install -r requirements.txt
+& ../pmaf-qb-venv/Scripts/python.exe -m pip install -r examples/eurostat_2026q4/requirements.txt
 ```
 
 In subsequent commands, replace `python` with the executable in this environment. Installing packages requires network access; regeneration uses only archived responses. Store virtual environments, logs, and regeneration outputs outside the repository to avoid introducing extra files into the package inventory.
@@ -281,11 +282,11 @@ Inspect the exit code and output of each command, and stop when a command fails.
 
 ```powershell
 python -B scripts/verify_artifact.py .
-python -B scripts/reproduce.py .
-python -B banks/binary/scripts/validate.py banks/binary
-python -B banks/point/scripts/validate_point.py --binary banks/binary --point banks/point
-python -B scripts/verify_freeze.py banks/binary
-python -B scripts/verify_freeze.py banks/point
+python -B examples/eurostat_2026q4/scripts/reproduce.py examples/eurostat_2026q4
+python -B examples/eurostat_2026q4/banks/binary/scripts/validate.py examples/eurostat_2026q4/banks/binary
+python -B examples/eurostat_2026q4/banks/point/scripts/validate_point.py --binary examples/eurostat_2026q4/banks/binary --point examples/eurostat_2026q4/banks/point
+python -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/binary
+python -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/point
 ```
 
 `-B` suppresses bytecode-cache writes. `reproduce.py` writes to temporary directories and removes those temporary outputs when it finishes. It does not overwrite the original QBs. Save any JSON verification output outside the QBs as well.
@@ -299,7 +300,7 @@ python -B scripts/verify_freeze.py banks/point
 | Binary distribution manifest | Contents of 221 files verified |
 | Point-forecast distribution manifest | Contents of 216 files verified |
 
-These counts apply to this archived version. Generated-file counts cover builder outputs; manifest counts also include records added after construction, such as verification results. Distribution copies omit private manuscript-reference files and retain additional regeneration records. Establish the relationship to the original archive using `banks/binary/management/distribution.json` and the actual manifest inventories, rather than file counts alone.
+These counts apply to this archived version. Generated-file counts cover builder outputs; manifest counts also include records added after construction, such as verification results. Distribution copies omit private manuscript-reference files and retain additional regeneration records. Establish the relationship to the original archive using `examples/eurostat_2026q4/banks/binary/management/distribution.json` and the actual manifest inventories, rather than file counts alone.
 
 Regeneration reruns construction from archived source responses. It does not retrieve past responses by revisiting the same URLs. Eurostat's standard API returns the latest dataset, so subsequent retrievals may include revised values or schedule changes. See the [official Eurostat API introduction](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-introduction).
 
@@ -309,12 +310,12 @@ The following PowerShell example saves construction outputs to new directories. 
 
 ```powershell
 New-Item -ItemType Directory -Path ../pmaf-replay-inputs
-Copy-Item -LiteralPath banks/binary/management/build_input_config.json -Destination ../pmaf-replay-inputs/config.json
-Copy-Item -LiteralPath banks/binary/management/raw -Destination ../pmaf-replay-inputs/raw -Recurse
-python -B banks/binary/scripts/build.py --inputs ../pmaf-replay-inputs --out ../pmaf-rebuilt-binary
-python -B banks/binary/scripts/validate.py ../pmaf-rebuilt-binary
-python -B banks/point/scripts/build_point.py --binary banks/binary --settings banks/point/global/point_settings.json --out ../pmaf-rebuilt-point
-python -B banks/point/scripts/validate_point.py --binary banks/binary --point ../pmaf-rebuilt-point
+Copy-Item -LiteralPath examples/eurostat_2026q4/banks/binary/management/build_input_config.json -Destination ../pmaf-replay-inputs/config.json
+Copy-Item -LiteralPath examples/eurostat_2026q4/banks/binary/management/raw -Destination ../pmaf-replay-inputs/raw -Recurse
+python -B examples/eurostat_2026q4/banks/binary/scripts/build.py --inputs ../pmaf-replay-inputs --out ../pmaf-rebuilt-binary
+python -B examples/eurostat_2026q4/banks/binary/scripts/validate.py ../pmaf-rebuilt-binary
+python -B examples/eurostat_2026q4/banks/point/scripts/build_point.py --binary examples/eurostat_2026q4/banks/binary --settings examples/eurostat_2026q4/banks/point/global/point_settings.json --out ../pmaf-rebuilt-point
+python -B examples/eurostat_2026q4/banks/point/scripts/validate_point.py --binary examples/eurostat_2026q4/banks/binary --point ../pmaf-rebuilt-point
 ```
 
 Use `management/build_input_config.json` when regenerating the binary bank for byte-for-byte comparison. Its settings equal those in `global/config.json`, but it retains the original JSON key order. In the existing builder, key order affects JSON representations embedded in prose. The point-forecast bank records its parent QB's manifest hash, so this example uses the original distributed binary bank as input. Using an intermediate rebuilt bank without its manifest would not reproduce the same parent-version record.
@@ -336,7 +337,7 @@ Use the [PMAF repository](https://github.com/luntailangjianye33-stack/PMAF-Prosp
 
 The author has selected MIT for the original code. The LICENSE, including the copyright notice, is included at the repository root. Apply the original terms to third-party materials such as Eurostat data; do not describe the entire collection as covered by MIT. Check distribution contents for API keys, private manuscripts, personal absolute paths, and unintended execution logs.
 
-Changes to the manual, README, or other documentation affect the outer `ARTIFACT_MANIFEST.json`. Review the publication candidate, update that outer inventory, and verify the package again. Do not modify frozen `banks/*/manifest.json` or account files to accommodate documentation updates.
+Changes to the manual, README, or other documentation affect the outer `ARTIFACT_MANIFEST.json`. Review the publication candidate, update that outer inventory, and verify the package again. Do not modify frozen `examples/eurostat_2026q4/banks/*/manifest.json` or account files to accommodate documentation updates.
 
 <a id="sources"></a>
 ## 12. Consult verification records and sources
@@ -344,6 +345,8 @@ Changes to the manual, README, or other documentation affect the outer `ARTIFACT
 The distribution code, configurations, series keys, provenance, schemas, and manifests were inspected on 2026-09-20. Results from the [regeneration and validation commands](#retain-output) are recorded in `QB_MANUAL_VERIFICATION_20260920.json` in the same `docs/` directory. This record does not document acquisition for a new period, forecasting, or scoring.
 
 The web sources were consulted on 2026-09-20. They include Eurostat's official API, calendar, and series metadata; JSON-stat; JSON Schema; Python's random-number and time-zone documentation; RFC 8493 and RFC 3161; and GitHub documentation on releases and citations. Distinguish requirements established by these specifications from procedures chosen for PMAF and constraints of this particular implementation.
+
+The verification record dated 20 September 2026 is retained unchanged and refers to the layout used then. The move to the current example directory and preservation of file contents are documented in `examples/eurostat_2026q4/layout_verification.json`.
 
 ### Editorial approach
 

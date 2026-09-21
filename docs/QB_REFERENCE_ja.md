@@ -1,6 +1,6 @@
 # PMAFの設定・ファイル・実装リファレンス
 
-版：0.2／更新日：2026-09-21
+版：0.3／更新日：2026-09-21
 
 [作成ガイドへ戻る](QB_CONSTRUCTION_MANUAL_ja.md) · [English](QB_REFERENCE_en.md)
 
@@ -58,41 +58,38 @@
 | 適格集合 C | 必須条件を満たすと確認した問い | 今回は36問。無作為抽出する際の問いの抽出枠 |
 | 採用集合 Q | Cから選定した問い | 今回は30問 |
 | 問い口座 | 一つの問い、資料、時間・情報条件、判定規則を対応付けた単位 | `accounts/<question_id>/` |
-| QuestionBank | 問い口座と共通規約・索引・構築記録を含む管理単位 | `banks/binary/` または `banks/point/` |
+| QuestionBank | 問い口座と共通規約・索引・構築記録を含む管理単位 | `examples/eurostat_2026q4/banks/binary/` または `examples/eurostat_2026q4/banks/point/` |
 
 データセットコードと系列を区別する。例えば `une_rt_m` だけでは一つの失業率系列は決まらない。`freq=M`、`s_adj=SA`、`age=TOTAL`、`sex=T`、`unit=PC_ACT`、`geo=EU27_2020` 等の次元の値を合わせて指定する。[Eurostatのメタデータ](https://ec.europa.eu/eurostat/cache/metadata/en/une_rt_m_esms.htm)を用いて、その組合せが意図する対象を表すか確認する。
 
 ```text
 repository/
 ├── README.md
-├── requirements.txt
+├── LICENSE
 ├── release_status.json
-├── ARTIFACT_MANIFEST.json       配布パッケージ全体の一覧
-├── docs/
-│   ├── QB_CONSTRUCTION_MANUAL_ja.md
-│   ├── QB_CONSTRUCTION_MANUAL_en.md
-│   ├── QB_REFERENCE_ja.md
-│   └── QB_REFERENCE_en.md
+├── ARTIFACT_MANIFEST.json
+├── docs/                         PMAF guides / 共通ガイド
 ├── scripts/
-│   ├── reproduce.py
-│   ├── verify_artifact.py
-│   └── verify_freeze.py
-├── manuscript/
-│   └── paired_account_examples.md
-└── banks/
-    ├── binary/
-    │   ├── global/              共通規約、設定、口座スキーマ
-    │   ├── accounts/<question_id>/
-    │   │   ├── question.md
-    │   │   ├── account.json
-    │   │   ├── materials.md
-    │   │   ├── local_rules.md
-    │   │   └── data/history.csv
-    │   ├── management/          全候補、採否、抽出順、原応答、来歴
-    │   ├── scripts/
-    │   ├── manifest.json        このQBの対象ファイル一覧
-    │   └── freeze.json          manifestのハッシュを参照する記録
-    └── point/                  点予測版。同じ基本配置
+│   └── verify_artifact.py
+└── examples/
+    └── eurostat_2026q4/
+        ├── README.md
+        ├── requirements.txt
+        ├── verification.json
+        ├── layout_verification.json
+        ├── scripts/
+        │   ├── reproduce.py
+        │   └── verify_freeze.py
+        ├── manuscript/paired_account_examples.md
+        └── banks/
+            ├── binary/
+            │   ├── global/
+            │   ├── accounts/<question_id>/
+            │   ├── management/
+            │   ├── scripts/
+            │   ├── manifest.json
+            │   └── freeze.json
+            └── point/
 ```
 
 共通規約は口座の外、QBの内側に置く。予測者に配布する範囲は口座の `materials` と共通規約で指定する。`management/` や他の口座まで一括配布しない。マニュアルは凍結済みQBの外側の `docs/` に置き、説明を更新するたびに既存口座のハッシュが変わることを避ける。
@@ -201,10 +198,14 @@ JSON Schemaの `$ref` は別のスキーマを参照して適用する仕組み�
 
 すべての必須項目を確認して作成完了とする。自動検査のPASS、独立した内容審査、実際の予測実験の成立はそれぞれ記録する。同じコードから同じ誤りを再生成できる場合もあるため、バイト一致を内容の正しさの代用にしない。
 
-新しいQBでは、構築直後、正式な凍結および予測実験の開始前に、保存した入力、同じ設定・コード・依存環境から別の保存先へ再構築し、最初の構築結果との一致を確認することを推奨する。比較するファイルの範囲を事前に定め、毎回変わる実行日時や実行ログ、構築後に追加する凍結記録とは区別する。不一致の原因を解消し、入力・設定・コードを変更した場合は変更後のQBで再確認する。一致と内容検査を確認してから正式に凍結し、予測実験を開始する。ここでの再構築は保存した入力を用いるため、後日の最新データの再取得を伴わない。凍結後も同じ検証を実施できるが、実験終了を待つ必要はない。この確認は構築処理の再現性を調べるものであり、凍結済みファイルの変更の有無をハッシュで確認する操作や、問い・資料の内容を審査する操作と区別する。
+プログラムで構築する新しいQBでは、構築直後、正式な凍結および予測実験の開始前に、保存した入力、同じ設定・コード・依存環境から別の保存先へ再構築し、最初の構築結果との一致を確認することを推奨する。比較するファイルの範囲を事前に定め、毎回変わる実行日時や実行ログ、構築後に追加する凍結記録とは区別する。不一致の原因を解消し、入力・設定・コードを変更した場合は変更後のQBで再確認する。一致と内容検査を確認してから正式に凍結し、予測実験を開始する。ここでの再構築は保存した入力を用いるため、後日の最新データの再取得を伴わない。凍結後も同じ検証を実施できるが、実験終了を待つ必要はない。この確認は構築処理の再現性を調べるものであり、凍結済みファイルの変更の有無をハッシュで確認する操作や、問い・資料の内容を審査する操作と区別する。
+
+**運用方法の選択：** 手動、ソフトウェア、AI、またはそれらの組合せを利用できます。Git等の版管理と、プログラムで構築したQBの再構築確認は推奨手段です。特定の保存形式、自動実行、自動コミット・プッシュは必須ではありません。凍結版の固定、記録の対応付け、訂正履歴、必要な証拠の保存は、方式に応じた手段で実施します。[実行と記録のガイド](EXPERIMENT_RECORDS_ja.md)を参照してください。 Gitによる自動コミット・プッシュは、記録の保存や追跡に役立つ可能性がある将来の実装案です。本成果物では実装しておらず、導入効果も検証していません。
 
 <a id="freeze-reference"></a>
 ## 8. 凍結と後続記録を管理する
+
+この節のmanifestとハッシュによる手順は、電子ファイルを用いる推奨実装例です。他の保存方式でも、固定内容・版・事前固定の根拠と変更履歴を検証できるようにします。
 
 ### 凍結対象を確定する
 
@@ -231,7 +232,7 @@ manifest自身とfreeze記録を同じmanifestの計算対象から外し、循�
 
 ローカルの時計とハッシュは内容の照合を支える。公開比較で「提示前までにこの版を固定していた」と第三者へ示す場合は、最初の提示前にmanifest等のダイジェストへ独立した時刻の証拠を対応付ける。[RFC 3161](https://www.rfc-editor.org/rfc/rfc3161)に基づくタイムスタンプを一つの方法として使える。今回の保存版には外部タイムスタンプがない。後日取得した証拠で、過去の存在時刻を遡って証明したとしない。
 
-予測・解決・採点の記録は、凍結版の外側に追記し、QB ID・版・問いID・run ID・manifestハッシュで対応付ける。口座にあるnullを実験結果で上書きする運用は、元の凍結版には行わない。配布用に私的ファイルを除く場合は別のmanifestを持つ配布版として、除外した内容と元版との関係を記録する。
+予測・解決・採点の記録は、凍結版の外側に追記し、QB ID・版・問いID・run ID、およびmanifestを採用した場合はそのハッシュで対応付ける。口座にあるnullを実験結果で上書きする運用は、元の凍結版には行わない。配布用に私的ファイルを除く場合は別のmanifestを持つ配布版として、除外した内容と元版との関係を記録する。
 
 <a id="implementation"></a>
 ## 9. 例：公開コードを別の実験へ適用する
@@ -257,7 +258,7 @@ manifest自身とfreeze記録を同じmanifestの計算対象から外し、循�
 
 ### 環境を揃える
 
-構築時の環境は `banks/binary/management/runtime.json` に保存されている。
+構築時の環境は `examples/eurostat_2026q4/banks/binary/management/runtime.json` に保存されている。
 
 | 項目 | 保存された版 |
 | --- | --- |
@@ -270,7 +271,7 @@ Python 3.13.9を利用できる環境で、`python --version` を確認する。
 
 ```powershell
 python -m venv ../pmaf-qb-venv
-& ../pmaf-qb-venv/Scripts/python.exe -m pip install -r requirements.txt
+& ../pmaf-qb-venv/Scripts/python.exe -m pip install -r examples/eurostat_2026q4/requirements.txt
 ```
 
 以下の `python` は、この環境の実行ファイルに読み替える。環境構築のパッケージ取得には通信が必要だが、構築結果の再生成には保存済み応答だけを使用する。仮想環境・ログ・再生成出力は、配布パッケージ全体のファイル照合を妨げないようリポジトリの外に保存する。
@@ -281,11 +282,11 @@ python -m venv ../pmaf-qb-venv
 
 ```powershell
 python -B scripts/verify_artifact.py .
-python -B scripts/reproduce.py .
-python -B banks/binary/scripts/validate.py banks/binary
-python -B banks/point/scripts/validate_point.py --binary banks/binary --point banks/point
-python -B scripts/verify_freeze.py banks/binary
-python -B scripts/verify_freeze.py banks/point
+python -B examples/eurostat_2026q4/scripts/reproduce.py examples/eurostat_2026q4
+python -B examples/eurostat_2026q4/banks/binary/scripts/validate.py examples/eurostat_2026q4/banks/binary
+python -B examples/eurostat_2026q4/banks/point/scripts/validate_point.py --binary examples/eurostat_2026q4/banks/binary --point examples/eurostat_2026q4/banks/point
+python -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/binary
+python -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/point
 ```
 
 `-B` はバイトコードキャッシュの書き込みを抑える。`reproduce.py` は一時ディレクトリに出力し、終了時にその一時出力を片付ける。元のQBに上書きしない。検査のJSONを保存する場合も、保存先をQBの外側にする。
@@ -299,7 +300,7 @@ python -B scripts/verify_freeze.py banks/point
 | 配布用の二値版manifest | 221ファイルの内容を照合 |
 | 配布用の点予測版manifest | 216ファイルの内容を照合 |
 
-件数はこの保存版に対する値である。再生成ファイル数は構築プログラムの出力数であり、その後に追加した検証記録等を含むmanifestの件数とは異なる。配布用コピーでは私的な論文参照ファイル等を除外し、再生成用の補足記録も保持している。元のアーカイブとの関係は、件数の一致だけで判断せず、`banks/binary/management/distribution.json` と各manifestのファイル一覧で確認する。
+件数はこの保存版に対する値である。再生成ファイル数は構築プログラムの出力数であり、その後に追加した検証記録等を含むmanifestの件数とは異なる。配布用コピーでは私的な論文参照ファイル等を除外し、再生成用の補足記録も保持している。元のアーカイブとの関係は、件数の一致だけで判断せず、`examples/eurostat_2026q4/banks/binary/management/distribution.json` と各manifestのファイル一覧で確認する。
 
 この再生成は、元応答からの構築を再実行する検査である。同じURLへ再アクセスして過去の応答を回収する操作ではない。Eurostatの通常APIは最新のデータセットを返すため、後日の再取得では改定値や予定変更を含み得る。[Eurostat API公式案内](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-introduction)
 
@@ -309,12 +310,12 @@ python -B scripts/verify_freeze.py banks/point
 
 ```powershell
 New-Item -ItemType Directory -Path ../pmaf-replay-inputs
-Copy-Item -LiteralPath banks/binary/management/build_input_config.json -Destination ../pmaf-replay-inputs/config.json
-Copy-Item -LiteralPath banks/binary/management/raw -Destination ../pmaf-replay-inputs/raw -Recurse
-python -B banks/binary/scripts/build.py --inputs ../pmaf-replay-inputs --out ../pmaf-rebuilt-binary
-python -B banks/binary/scripts/validate.py ../pmaf-rebuilt-binary
-python -B banks/point/scripts/build_point.py --binary banks/binary --settings banks/point/global/point_settings.json --out ../pmaf-rebuilt-point
-python -B banks/point/scripts/validate_point.py --binary banks/binary --point ../pmaf-rebuilt-point
+Copy-Item -LiteralPath examples/eurostat_2026q4/banks/binary/management/build_input_config.json -Destination ../pmaf-replay-inputs/config.json
+Copy-Item -LiteralPath examples/eurostat_2026q4/banks/binary/management/raw -Destination ../pmaf-replay-inputs/raw -Recurse
+python -B examples/eurostat_2026q4/banks/binary/scripts/build.py --inputs ../pmaf-replay-inputs --out ../pmaf-rebuilt-binary
+python -B examples/eurostat_2026q4/banks/binary/scripts/validate.py ../pmaf-rebuilt-binary
+python -B examples/eurostat_2026q4/banks/point/scripts/build_point.py --binary examples/eurostat_2026q4/banks/binary --settings examples/eurostat_2026q4/banks/point/global/point_settings.json --out ../pmaf-rebuilt-point
+python -B examples/eurostat_2026q4/banks/point/scripts/validate_point.py --binary examples/eurostat_2026q4/banks/binary --point ../pmaf-rebuilt-point
 ```
 
 完全なバイト一致を調べる二値版再生成には `management/build_input_config.json` を使う。このファイルと `global/config.json` の設定値は同じだが、元のJSONキー順を保持している。既存の構築コードではキー順が文章内のJSON表示に影響する。点予測版は親QBのmanifestハッシュを保存するため、上例では元の配布用二値版を入力としている。manifestをまだ作っていない再生成途中の二値版を入力にすると、親版の記録まで同じにはならない。
@@ -336,7 +337,7 @@ python -B banks/point/scripts/validate_point.py --binary banks/binary --point ..
 
 自作コードは著者がMITで公開する方針を選択済みである。著作権表示を含むLICENSEをリポジトリ直下に置く。Eurostat等の第三者資料には各出典の利用条件を適用し、MITを一括で適用したと記載しない。APIキー、私的な原稿、個人の絶対パスや不用意な実行ログが含まれないかを配布対象について確認する。
 
-マニュアルやREADME等を変更すると、外側の `ARTIFACT_MANIFEST.json` の対象が変わる。配布候補の内容を確認した上で外側の一覧を更新し、全体を再照合する。凍結済みの `banks/*/manifest.json` と口座ファイルを文書更新に合わせて変更しない。
+マニュアルやREADME等を変更すると、外側の `ARTIFACT_MANIFEST.json` の対象が変わる。配布候補の内容を確認した上で外側の一覧を更新し、全体を再照合する。凍結済みの `examples/eurostat_2026q4/banks/*/manifest.json` と口座ファイルを文書更新に合わせて変更しない。
 
 <a id="sources"></a>
 ## 12. 検証記録と出典を確認する
@@ -344,6 +345,8 @@ python -B banks/point/scripts/validate_point.py --binary banks/binary --point ..
 2026-09-20に、配布コード、設定、系列キー、来歴、スキーマ、manifestを確認した。[再生成・検査コマンド](#retain-output)の実行結果は、同じ `docs/` の `QB_MANUAL_VERIFICATION_20260920.json` に記録する。新しい期間に対する収集・予測・採点を実行した記録ではない。
 
 Web資料は2026-09-20に参照した。主な根拠は、Eurostatの公式API・カレンダー・系列メタデータ、JSON-stat、JSON Schema、Pythonの乱数・時間帯仕様、RFC 8493・3161、およびGitHubの公開・引用資料である。これらの仕様が定める部分と、PMAFが選択した手順や今回の実装上の制約を区別して利用する。
+
+上記の2026年9月20日の検証記録は当時の配置を示すため、そのまま保持しています。現在の例示フォルダーへの移動と内容の一致は、`examples/eurostat_2026q4/layout_verification.json`に記録しています。
 
 ### このガイドの編集方針
 

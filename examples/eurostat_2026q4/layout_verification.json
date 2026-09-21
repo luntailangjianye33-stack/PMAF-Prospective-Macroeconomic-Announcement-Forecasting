@@ -1,0 +1,40 @@
+{
+  "scope": "Repository layout migration and construction-only verification; no forecasts, outcomes, or performance scores collected",
+  "date": "2026-09-21",
+  "initial_publication_commit": "34bee8d0622d4735da7ed28342fb8481e547529b",
+  "pre_migration_comparison": "File inventory and SHA-256 digests in the outer manifest saved immediately before this layout migration",
+  "mapping": {
+    "from": "banks/",
+    "to": "examples/eurostat_2026q4/banks/"
+  },
+  "bank_files_unchanged": 441,
+  "bank_relative_paths_unchanged": true,
+  "bank_manifests_and_freeze_records_unchanged": true,
+  "checks_run_after_relocation": {
+    "binary_validation": {
+      "status": "PASS",
+      "checks": 540
+    },
+    "point_validation": {
+      "status": "PASS",
+      "checks": 574
+    },
+    "binary_freeze": {
+      "status": "PASS",
+      "files": 221
+    },
+    "point_freeze": {
+      "status": "PASS",
+      "files": 216
+    },
+    "offline_reconstruction": {
+      "status": "PASS",
+      "binary_generated_files": 207,
+      "point_generated_files": 211,
+      "network_used": false
+    }
+  },
+  "historical_records": "verification.json and docs/QB_MANUAL_VERIFICATION_20260920.json retain their original contents; paths in historical records refer to the layout at that time",
+  "outer_manifest": "Regenerated for the new documentation and paths; separate from the unchanged bank manifests",
+  "limitations": "Local content verification does not establish an independent historical timestamp, uninterrupted immutability, or experimental execution."
+}

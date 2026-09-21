@@ -1,6 +1,6 @@
 # PMAFでQuestionBankを作成する
 
-版：0.2／更新日：2026-09-21
+版：0.3／更新日：2026-09-21
 
 [English](QB_CONSTRUCTION_MANUAL_en.md) · [設定・ファイル・実装の詳細](QB_REFERENCE_ja.md)
 
@@ -8,7 +8,9 @@
 
 地域、統計機関、期間、問い数は実験目的に合わせて指定します。**「例：Eurostat版」には、公開済みの構築例で用いた値やコードを掲載しています。** これらの値はPMAF共通の指定ではありません。
 
-**新しいQBを作る順序：** QBの構築・内容検査 → 保存した入力から再構築して一致を確認 → 正式な凍結 → 予測実験の開始。再構築による確認は、構築直後、実験開始前に行います。
+**新しいQBを作る順序：** QBの構築・内容検査 → 構築方法に応じた再検証 → 正式な凍結 → 予測実験の開始。プログラムによる再構築の確認は、構築直後、実験開始前に行うことを推奨します。
+
+**運用方法の選択：** 手動、ソフトウェア、AI、またはそれらの組合せを利用できます。Git等の版管理と、プログラムで構築したQBの再構築確認は推奨手段です。特定の保存形式、自動実行、自動コミット・プッシュは必須ではありません。凍結版の固定、記録の対応付け、訂正履歴、必要な証拠の保存は、方式に応じた手段で実施します。[実行と記録のガイド](EXPERIMENT_RECORDS_ja.md)を参照してください。 Gitによる自動コミット・プッシュは、記録の保存や追跡に役立つ可能性がある将来の実装案です。本成果物では実装しておらず、導入効果も検証していません。
 
 | 行いたいこと | 読む箇所 |
 | --- | --- |
@@ -47,7 +49,7 @@
 
 **例：Eurostat版**
 
-公表予定は2026年10〜12月、対象地域はEU27_2020・EA21、対象は6データセット、問い数は30、提示から公表まで336時間、回答時間は2時間、公表後の処理時間は24時間としました。設定は `banks/binary/global/config.json` にあります。入力はJSONです。YAMLの直接読込みと、設定全体を検証する完全なスキーマは現行コードに実装されていません。
+公表予定は2026年10〜12月、対象地域はEU27_2020・EA21、対象は6データセット、問い数は30、提示から公表まで336時間、回答時間は2時間、公表後の処理時間は24時間としました。設定は `examples/eurostat_2026q4/banks/binary/global/config.json` にあります。入力はJSONです。YAMLの直接読込みと、設定全体を検証する完全なスキーマは現行コードに実装されていません。
 
 <a id="collect"></a>
 ## 3. 公表予定と統計データを収集する
@@ -143,7 +145,9 @@
 <a id="regenerate"></a>
 ## 7. 保存した入力からQBを再構築し、一致を確認する
 
-**実施時期：** 新しいQBを構築した直後、正式な凍結と予測実験の開始前に行います。不備を早期に修正できるよう、実験終了を待たずに確認します。
+**適用範囲：** この節のコード再実行は、プログラムでQBを構築した場合の推奨手順です。手作業の場合は、元資料・設定・作成手順・採否の記録から第三者が追跡・再検証できる状態を確認します。後掲のコマンドはEurostat実装の例です。
+
+**実施時期：** 再構築による確認を採用する場合、新しいQBを構築した直後、正式な凍結と予測実験の開始前に行います。不備を早期に修正できるよう、実験終了を待たずに確認します。
 
 **目的：** 保存した入力、同じ設定・コード・依存環境からQBを再構築（再生成）し、最初の構築結果と一致するか確認します。後日、情報源から最新データを取り直す操作は含めません。
 
@@ -153,7 +157,7 @@
 2. 元QBと別の場所に構築結果を出力します。後日取得した最新データで元資料を置き換えないでください。
 3. 比較するファイルの範囲を事前に定め、再構築したファイルの一覧とハッシュを最初の構築結果に照合します。毎回変わる実行日時や実行ログ、構築後に追加する凍結記録は、構築結果とは分けて記録し、比較対象の範囲を明記します。構造・参照・計算の検査も実行します。
 4. 一致した範囲、差異、実行環境を記録します。不一致の原因を解消し、入力・設定・コードを修正した場合は、修正後のQBで再確認します。[問題が発生した場合](#troubleshoot)も参照してください。
-5. 一致と内容検査を確認した後、[8. QuestionBankを検証・凍結する](#freeze)へ進みます。予測実験は正式な凍結後に開始します。
+5. 再構築を採用した場合は一致を確認し、内容検査を終えた後、[8. QuestionBankを検証・凍結する](#freeze)へ進みます。予測実験は正式な凍結後に開始します。
 
 **完了の確認：** 指定した比較方法で構築結果が一致しています。バイト一致を求める場合は、改行・エンコーディング・JSONのキー順も含めて揃えます。同じ内容を再生成できることと、内容が正しいことはそれぞれ検査します。
 
@@ -165,12 +169,12 @@
 
 検査は `assert` を使うため、`python -O` を付けないでください。`-B` はキャッシュ作成を抑えます。環境、ログ、追加の出力は配布フォルダーの外へ保存してください。
 
-1. 公開リポジトリを取得し、最初の公開版へ移動します。最新のコードを試す場合は、その版の手順と検証記録を確認してください。
+1. 公開リポジトリを取得し、表示されるコミットIDを記録します。後日同じ版を取得するときは、そのIDを指定してください。初回公開版34bee8dは配置が異なるため、その版を使う場合は当時の手順に従います。
 
    ```powershell
    git clone https://github.com/luntailangjianye33-stack/PMAF-Prospective-Macroeconomic-Announcement-Forecasting.git pmaf-example
    Set-Location pmaf-example
-   git checkout 34bee8d0622d4735da7ed28342fb8481e547529b
+   git rev-parse HEAD
    ```
 
 2. `python --version` が `Python 3.13.9` であることを確認し、専用の環境を作ります。`../pmaf-qb-venv` は新しい保存先にしてください。
@@ -178,7 +182,7 @@
    ```powershell
    python --version
    python -m venv ../pmaf-qb-venv
-   & ../pmaf-qb-venv/Scripts/python.exe -m pip install -r requirements.txt
+   & ../pmaf-qb-venv/Scripts/python.exe -m pip install -r examples/eurostat_2026q4/requirements.txt
    ```
 
 3. 配布ファイルが保存された一覧と一致するか確認します。以降の操作はリポジトリのフォルダーで行います。
@@ -192,7 +196,7 @@
 4. 保存した入力から二つのQBを再生成します。
 
    ```powershell
-   & ../pmaf-qb-venv/Scripts/python.exe -B scripts/reproduce.py .
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/scripts/reproduce.py examples/eurostat_2026q4
    ```
 
    結果の `status` が `PASS`、`binary_generated_files_identical` が207、`point_generated_files_identical` が211であることを確認します。生成物は一時フォルダーに作られ、終了時に削除されます。元のQBは変更されません。
@@ -200,10 +204,10 @@
 5. 内容と凍結記録を確認します。各行を順に実行し、失敗したら次へ進まず原因を確認します。
 
    ```powershell
-   & ../pmaf-qb-venv/Scripts/python.exe -B banks/binary/scripts/validate.py banks/binary
-   & ../pmaf-qb-venv/Scripts/python.exe -B banks/point/scripts/validate_point.py --binary banks/binary --point banks/point
-   & ../pmaf-qb-venv/Scripts/python.exe -B scripts/verify_freeze.py banks/binary
-   & ../pmaf-qb-venv/Scripts/python.exe -B scripts/verify_freeze.py banks/point
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/banks/binary/scripts/validate.py examples/eurostat_2026q4/banks/binary
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/banks/point/scripts/validate_point.py --binary examples/eurostat_2026q4/banks/binary --point examples/eurostat_2026q4/banks/point
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/binary
+   & ../pmaf-qb-venv/Scripts/python.exe -B examples/eurostat_2026q4/scripts/verify_freeze.py examples/eurostat_2026q4/banks/point
    ```
 
    すべて `PASS` が期待されます。保存版の内容検査は二値版540項目・点予測版574項目、凍結照合は221ファイル・216ファイルです。再生成するファイル数とは対象が異なります。
@@ -213,7 +217,9 @@
 <a id="freeze"></a>
 ## 8. QuestionBankを検証・凍結する
 
-**準備するもの：** 資料を整備したQB、適格性の記録、検査項目、凍結対象の一覧、および[再構築による一致の確認結果](#regenerate)。
+**実装例：** 以下のmanifest・SHA-256による手順は、検証可能な事前固定を実装する推奨例です。他の手段では、内容・版・変更履歴と必要な時刻の証拠をどう確認するかを事前に定めます。
+
+**準備するもの：** 資料を整備したQB、適格性の記録、検査項目、凍結対象の一覧、および採用した方法による再検証の結果（プログラムの場合は[再構築による一致の確認結果](#regenerate)など）。
 
 再構築の確認後に入力・設定・コードや構築結果を変更した場合は、変更後のQBで確認をやり直してから凍結します。ここでのハッシュ照合は、保存したQBが凍結時の内容を保っているかを確認する操作です。前節の再構築では、構築処理を実行して同じ成果物を作れるか確認します。
 
