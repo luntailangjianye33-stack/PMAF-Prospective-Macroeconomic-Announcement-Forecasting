@@ -13,7 +13,12 @@ The scheduled times are tentative policy-derived plans and must be reconfirmed b
 
 ## Construction manual
 
-The engineering manual, available in [English](docs/QB_CONSTRUCTION_MANUAL_en.md) and [Japanese](docs/QB_CONSTRUCTION_MANUAL_ja.md), explains construction, archived-input regeneration, acceptance checks, sampling records, account materials, freezing, and limitations of the current implementation. Both language versions accompany the two Eurostat QBs in this repository.
+The construction guide presents the general PMAF workflow, with Eurostat examples at each relevant step. It covers preparation, experiment configuration, acquisition, screening, selection, account assembly, validation, freezing, and regeneration. Concrete commands apply to the published Eurostat implementation; adapting it to other sources requires implementation changes.
+
+| Documentation | English | 日本語 |
+| --- | --- | --- |
+| Task-based construction guide | [Read the guide](docs/QB_CONSTRUCTION_MANUAL_en.md) | [作成手順を読む](docs/QB_CONSTRUCTION_MANUAL_ja.md) |
+| Configuration, file, and implementation reference | [Look up details](docs/QB_REFERENCE_en.md) | [設定・ファイル・実装の詳細](docs/QB_REFERENCE_ja.md) |
 
 ## Reproduce and verify
 

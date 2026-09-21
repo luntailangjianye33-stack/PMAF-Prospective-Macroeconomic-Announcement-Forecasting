@@ -2219,18 +2219,28 @@
     },
     {
       "path": "docs/QB_CONSTRUCTION_MANUAL_en.md",
-      "bytes": 34321,
-      "sha256": "d0f5f5e2e6d3072feec6c9bbbbeeca166d9fee626a554cd367020141dfa2bdf6"
+      "bytes": 18939,
+      "sha256": "d5931af99f320d5ba03d2a283e50437fe7c745be58001377327c6a1c4b71740b"
     },
     {
       "path": "docs/QB_CONSTRUCTION_MANUAL_ja.md",
-      "bytes": 33587,
-      "sha256": "e030e8ce75205ebf188e77db53614935e45b411e4b18c6638f8a943d3867c9f7"
+      "bytes": 20013,
+      "sha256": "959cb1a25506e476e2814d8fa0a3b6677a1ed1c0f59f8cc8e8e298c614c862c6"
     },
     {
       "path": "docs/QB_MANUAL_VERIFICATION_20260920.json",
       "bytes": 1715,
       "sha256": "225f1ba792cab5ce2fbba9d4456e4cc541541c2bb165fa53ce40df9be308c634"
+    },
+    {
+      "path": "docs/QB_REFERENCE_en.md",
+      "bytes": 31695,
+      "sha256": "1ba7e12269228f9b3dcea0811a7ac6dcc4db0a4e7f672601382cc1cb141663f4"
+    },
+    {
+      "path": "docs/QB_REFERENCE_ja.md",
+      "bytes": 31041,
+      "sha256": "c9ebd732fedd8b99c79350353e239e8daff3ffa7dc5b8df1dc50b4dbe27d280f"
     },
     {
       "path": "LICENSE",
@@ -2244,8 +2254,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4557,
-      "sha256": "3e39eb7fd4fe200a4f7b79801bb610b1aa241b1cd30ddb7a64c1157c6016ed98"
+      "bytes": 4943,
+      "sha256": "2f21ca17ef49d1ce005157f77f069ac70b21ccb6c9469f088f510dc7690cdbfc"
     },
     {
       "path": "release_status.json",
@@ -2278,5 +2288,5 @@
       "sha256": "c8672f9c0eded4c7995642cee62f92aac1d0210dbef58775fa2359c56b32c68d"
     }
   ],
-  "documentation_updated_at_utc": "2026-09-20T07:10:00.673462+00:00"
+  "documentation_updated_at_utc": "2026-09-21T01:55:13.353720+00:00"
 }
