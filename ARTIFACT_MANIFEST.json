@@ -14,23 +14,23 @@
     },
     {
       "path": "docs/EXPERIMENT_RECORDS_en.md",
-      "bytes": 8486,
-      "sha256": "73fccd2c5324a4503b93a887734f9c4396999b1fdb320c0d652c02c350142fc0"
+      "bytes": 11885,
+      "sha256": "167e4d9c107d0065ca787bc296410da7875d5c4d1030b5a83be732c841cdbddd"
     },
     {
       "path": "docs/EXPERIMENT_RECORDS_ja.md",
-      "bytes": 8778,
-      "sha256": "47e9eec914a1574e9deb70ced996d5a5d7468baaab92c7fd8d10ed9f7c855f6f"
+      "bytes": 12173,
+      "sha256": "8e9f3dda13bb1a92a21eeacaf4922280e2b22f847c40c24978eb3a4a0d6ddc43"
     },
     {
       "path": "docs/QB_CONSTRUCTION_MANUAL_en.md",
-      "bytes": 23875,
-      "sha256": "1c7a3fca756be9b14181b0253ef35e55b3b298a8348d41940cc05ad8e439571c"
+      "bytes": 24232,
+      "sha256": "e934ff814810eadf1748491d1af16afb27da2b2bf5aa972597f3b1172cf44aa1"
     },
     {
       "path": "docs/QB_CONSTRUCTION_MANUAL_ja.md",
-      "bytes": 25225,
-      "sha256": "3afe8e340d0a261626e5ecbb0e440896a5d1f9e9b0dc1e8e88d4495a7c1940b9"
+      "bytes": 25594,
+      "sha256": "02e1cb849c1342ea3e156a3e9f0536868558503ca2968af245d45bcc5fa3948d"
     },
     {
       "path": "docs/QB_MANUAL_VERIFICATION_20260920.json",
@@ -39,13 +39,13 @@
     },
     {
       "path": "docs/QB_REFERENCE_en.md",
-      "bytes": 34155,
-      "sha256": "39f2cf5860b6a34c898414fea819f49ccd2f04211f78192ed56716b413b7bfb8"
+      "bytes": 34514,
+      "sha256": "a99d28befe28866263087e8365c75b215e12d73e6a471889c6a30dea16a1ba83"
     },
     {
       "path": "docs/QB_REFERENCE_ja.md",
-      "bytes": 33743,
-      "sha256": "9e05649fd2dab9903228972152af1b14f28de33944169746792bb6cdcc2f0cdc"
+      "bytes": 34114,
+      "sha256": "361f08edfff8932514e25cea2610f5309eabf559c29173a679cac4c4e8fb3b76"
     },
     {
       "path": "examples/eurostat_2026q4/banks/binary/accounts/sts_copr_m__EA21__2026-08__first__above_anchor/account.json",

@@ -70,7 +70,28 @@ Restrict history rewriting/deletion and replicate records to remote storage. Liv
 
 Git commit dates can be set by the user, so assess submission timing from reception evidence. Public evaluations requiring independent time evidence can combine records with external timestamps. Hashes, commits, or signatures alone do not establish scientific correctness, submission time, or continuous absence of changes throughout execution.
 
-## 6. Current Eurostat construction example
+<a id="timing-exceptions"></a>
+## 6. Handle departures from timing conditions
+
+**Decide before the experiment:** In the evaluation protocol and experiment configuration, specify tolerances for presentation and publication timing and actual lead time, resolution and scoring deadlines, primary-analysis inclusion rules, and how to determine the common question set for comparisons. Fix these before collecting forecasts; do not relax them after inspecting forecasts or scores. The following is a recommended PMAF operating policy.
+
+| Situation | Primary analysis and records |
+| --- | --- |
+| Publication shifts within prespecified tolerances | Include the question if prospective status, information conditions, other eligibility criteria, and evaluation deadlines also hold. Retain planned and actual times and their differences. |
+| A postponement or other change breaches timing conditions | Exclude the question from primary analysis under the original conditions; retain the question, original submissions, conditions, and reasons. Report scoring after resolution as supplementary evaluation. |
+| The outcome remains unavailable at the evaluation deadline | Preserve an unresolved status; do not impute NO, an incorrect forecast, or a provisional score. Later scoring does not retrospectively change end-of-period status or the primary analysis. |
+| Early publication makes the target value public before submission | Exclude affected submissions from prospective evaluation of that value. For pre-publication submissions, also check actual timing conditions and comparison-set rules. |
+| Only one forecaster misses the submission deadline | Exclude that submission from primary scoring and report its status for that forecaster. Do not automatically remove the entire question; apply prespecified comparison-set rules. |
+
+**Follow this sequence:** Preserve source evidence, planned and measured times, and their basis. Distinguish question-level states from each forecaster's submission status. Hold matters that cannot be verified, and retain the rule-based decision, reason, reviewer, and decision time. Hold affected cases not covered by existing rules, document their handling, and identify any unplanned analysis. Append these records separately without modifying the frozen QB.
+
+**Report:** Alongside scores and scored-question counts, provide initial, unresolved, and excluded question counts, reason-specific counts, forecaster-specific submission status, and all denominators. Identify overlapping reasons without counting them as independent questions. Apply the common-set rule to comparisons; any additional forecaster-specific scores identify their own sets and counts.
+
+Compare the geographical and statistical-domain composition of included and excluded questions. Limit interpretation of primary scores to the questions and conditions that could be scored. Supplementary evaluation including later-resolved questions or different timing conditions identifies its set, actual timing conditions, and reporting cutoff. Exclusion is not assumed to guarantee unbiased evaluation.
+
+This guidance helps specify rules for future experiments. It does not change the published Eurostat example's frozen rules or establish that exception handling or forecasting has been executed or validated in that example. If different rules are adopted, fix a new version before forecasting begins.
+
+## 7. Current Eurostat construction example
 
 `examples/eurostat_2026q4/` contains frozen banks, source materials, and construction/validation code. It does not implement forecast execution, answer reception, browsing-history collection, automated outcome acquisition/scoring, or automatic push. Before conducting an actual experiment, recheck target and schedule eligibility and provide a separate method for preserving execution records.
 

@@ -40,6 +40,8 @@ Record the following as concrete values or decision rules. The general configura
 | Resolution and scoring | Official evidence, vintage, retrieval deadline, boundary cases, metric, scale, and aggregation unit | `resolution_and_scoring` |
 | Exceptions and freezing | Postponements, missing data, retrieval failures, violations, replacements, changes, and evidence of existence at a given time | `exceptions_and_records` |
 
+Fix timing tolerances, evaluation deadlines, primary-analysis inclusion rules, and comparison-set rules before collecting forecasts. Assess postponements against those conditions rather than excluding every postponed release. See [Handle departures from timing conditions](EXPERIMENT_RECORDS_en.md#timing-exceptions) for processing and reporting guidance.
+
 The example uses scheduled releases in October–December 2026, EU27_2020 and EA21, six datasets, 30 questions sampled without replacement, H=336 hours, D=2 hours, b=24 hours, and 24 months of history. These are illustrative choices, not fixed values for PMAF generally.
 
 Distinguish writing configuration values in JSON or YAML from defining a schema that validates those values. The current code reads JSON and cannot directly load YAML. The distribution also lacks a complete configuration schema; `account.schema.json` applies to generated accounts.

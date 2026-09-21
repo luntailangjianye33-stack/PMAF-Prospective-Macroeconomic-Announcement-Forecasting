@@ -1,6 +1,6 @@
 # Create a QuestionBank with PMAF
 
-Version: 0.3 / Updated: 2026-09-21
+Version: 0.4 / Updated: 2026-09-21
 
 [日本語](QB_CONSTRUCTION_MANUAL_ja.md) · [Configuration, files, and implementation reference](QB_REFERENCE_en.md)
 
@@ -50,6 +50,8 @@ The published code constructs, validates, and regenerates QBs for selected Euros
 **Example: Eurostat**
 
 The example uses scheduled releases in October–December 2026, EU27_2020 and EA21, six datasets, 30 questions, a lead time of 336 hours, a response duration of 2 hours, and a post-release processing allowance of 24 hours. Settings are in `examples/eurostat_2026q4/banks/binary/global/config.json`. The implementation reads JSON; it does not directly load YAML or provide a complete schema for the entire configuration.
+
+Fix timing tolerances, evaluation deadlines, primary-analysis inclusion rules, and comparison-set rules before collecting forecasts. Assess postponements against those conditions rather than excluding every postponed release. See [Handle departures from timing conditions](EXPERIMENT_RECORDS_en.md#timing-exceptions) for processing and reporting guidance.
 
 <a id="collect"></a>
 ## 3. Collect release schedules and statistical data
